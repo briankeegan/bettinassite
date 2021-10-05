@@ -1,6 +1,6 @@
 - Portfolio
 - contact
-- email
+  - email
 - (hubspot) form
 
 instagram feed
