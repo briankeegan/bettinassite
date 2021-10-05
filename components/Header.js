@@ -8,7 +8,6 @@ const StyledLink = styled.a`
 `;
 
 const NavUl = styled.ul`
-  border: solid red;
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
@@ -16,10 +15,10 @@ const NavUl = styled.ul`
   margin-left: 12rem;
   margin-right: 12rem;
   padding: 0;
+  background-color: ${(props) => props.theme.colors.aeroBlue};
 `;
 
 const NavLi = styled.li`
-  border: solid orange;
   display: flex;
   flex-align: center;
   align-items: center;
