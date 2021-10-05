@@ -35,7 +35,11 @@ function HomePage() {
       <h1>New website coming soon!</h1>
       <p>
         In the meantime, please check out my{' '}
-        <a href="https://www.instagram.com/begoniabaschy/" target="_blank">
+        <a
+          href="https://www.instagram.com/begoniabaschy/"
+          rel="noreferrer"
+          target="_blank"
+        >
           instagram
         </a>
       </p>
