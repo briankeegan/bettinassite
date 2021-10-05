@@ -1,10 +1,15 @@
 import Link from 'next/link';
 import styled from 'styled-components';
+import { useRouter } from 'next/router';
 
 const StyledLink = styled.a`
   text-decoration: none;
   padding: 3.125rem;
   font-size: 1.8rem;
+  color: ${(props) =>
+    props.isActive
+      ? props.theme.colors.oliveDrab7
+      : props.theme.colors.oliveDrab72};
 `;
 
 const NavUl = styled.ul`
@@ -23,14 +28,17 @@ const NavLi = styled.li`
   flex-align: center;
   align-items: center;
   margin: 0;
-  ${(props) => props.left && 'margin-right: auto;'}
+  ${(props) => props.left && 'margin-right: auto;'};
 `;
 
 const NavItem = ({ href, children, left }) => {
+  const router = useRouter();
+  const isActive = router.asPath === href;
+  console.log({ isActive });
   return (
     <NavLi left={left}>
       <Link href={href} passHref>
-        <StyledLink>{children}</StyledLink>
+        <StyledLink isActive={isActive}>{children}</StyledLink>
       </Link>
     </NavLi>
   );
@@ -44,8 +52,8 @@ const Header = () => {
           LOGO
         </NavItem>
         <NavItem href="/about">ABOUT</NavItem>
-        <NavItem href="/contact">CONTACT</NavItem>
         <NavItem href="/portfolio">PORTOLIO</NavItem>
+        <NavItem href="/contact">CONTACT</NavItem>
       </NavUl>
     </header>
   );

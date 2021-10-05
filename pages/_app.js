@@ -9,7 +9,8 @@ const GlobalStyle = createGlobalStyle`
   * {
       box-sizing: border-box;
       font-family: 'Proza Libre', sans-serif;
-    }
+      color: ${(props) => props.theme.colors.oliveDrab7}
+  }
   body {
     margin: 0;
     padding: 0;
@@ -30,7 +31,7 @@ const GlobalStyle = createGlobalStyle`
       console.log(props.showForm);
       return props.showForm ? 'block' : 'none';
     }};
-    width: 50%;
+    width: 30rem;
     margin: 0 auto;
   }
   .submitted-message {
@@ -69,7 +70,7 @@ export default function App({ Component, pageProps }) {
   }, []);
   return (
     <>
-      <GlobalStyle showForm={router.asPath === '/contact'} />
+      <GlobalStyle theme={theme} showForm={router.asPath === '/contact'} />
       <ThemeProvider theme={theme}>
         <Header />
         <Component {...pageProps} />
