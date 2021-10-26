@@ -1,7 +1,8 @@
 import { useEffect, useRef } from 'react';
 import { useRouter } from 'next/router';
 import Header from '../components/Header';
-import { createGlobalStyle, ThemeProvider } from 'styled-components';
+import Footer from '../components/Footer';
+import styled, { createGlobalStyle, ThemeProvider } from 'styled-components';
 import './_app.css';
 
 // font-family: 'Commissioner', sans-serif;
@@ -49,6 +50,8 @@ const theme = {
   },
 };
 
+
+
 export default function App({ Component, pageProps }) {
   const router = useRouter();
   const exists = useRef();
@@ -74,7 +77,11 @@ export default function App({ Component, pageProps }) {
       <ThemeProvider theme={theme}>
         <Header />
         <Component {...pageProps} />
+        <Footer theme={theme}/>
       </ThemeProvider>
+
+        
+   
     </>
   );
 }
