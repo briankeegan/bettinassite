@@ -21,22 +21,29 @@ const FooterUl = styled.ul`
   display: flex;
   justify-content: center;
   flex-direction: row;
+  margin: 0;
 `;
 
 const FooterLi = styled.li`
   margin-left: 2em;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+  font-size: 1.5rem;
+  padding: .5rem;
 `;
 
 const FooterLink = styled.a`
   display: flex;
   align-items: center;
   padding: 0;
-  &:hover {
+  /* &:hover {
     background-color: #f0fff0;
-  }
+  } */
 `;
 
-const X = 3;
+const X = 5;
 function InstaIcon() {
   return (
     <Image
@@ -65,7 +72,7 @@ const Footer = () => {
           </FooterLink>
         </FooterLi>
         <FooterLi>
-          <p>Bettinasemail@emailstuff.com</p>
+          Bettinasemail@emailstuff.com
         </FooterLi>
       </FooterUl>
     </Box>
