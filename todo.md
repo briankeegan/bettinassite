@@ -2,5 +2,6 @@
 - contact
   - email
 - (hubspot) form
+add testimonials!!
 
 instagram feed
