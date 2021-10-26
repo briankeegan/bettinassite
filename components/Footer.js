@@ -11,13 +11,9 @@ import Image from 'next/image';
 // `;
 
 const Box = styled.div`
-  padding: 30px 30px;
   background: #caf7e2ff;
-  position: absolute;
+  position: fixed;
   bottom: 0;
-  /* left: 0;
-  bottom: 0;
-  right: 0; */
   width: 100%;
 `;
 
