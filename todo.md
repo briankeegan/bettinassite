@@ -7,6 +7,8 @@
 - rearrange about foto to the left and text to the write
 - make homepage just a foto
 - Bettina do you want writing on the fotos in portfolio?
+- whats youre professional email?
+- give me your content tooooo
 
 donish-
 - contact
