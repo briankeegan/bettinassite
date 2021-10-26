@@ -1,30 +1,21 @@
 import styled from 'styled-components';
 import Image from 'next/image';
 
-// const IconContainer = styled.div`
-//   margin-top: 1em;
-
-//   /* &:hover {
-//     color: grey;
-//     transition: 200ms ease-in;
-//   } */
-// `;
-
 const Box = styled.div`
   background: #caf7e2ff;
   position: fixed;
   bottom: 0;
-  width: 100%;
+  width: 100%; //footer box is a little big and squeezes photos in a bit too much
 `;
 
-const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  max-width: 1000px;
-  margin: 0 auto;
-  background: #caf7e2ff;
-`;
+// const Container = styled.div`
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: center;
+//   max-width: 1000px;
+//   margin: 0 auto;
+//   background: #caf7e2ff;
+// `;
 
 const FooterUl = styled.ul`
   display: flex;
@@ -36,16 +27,13 @@ const FooterLi = styled.li`
   margin-left: 2em;
 `;
 
-const FooterLink = styled.i`
-  margin-bottom: 20px;
-  font-size: 18px;
-  /* background: blueviolet; */
-
-  /* &:hover {
-    // check hover
-    color: #fff;
-    transition: 200ms ease-in;
-  } */
+const FooterLink = styled.a`
+  display: flex;
+  align-items: center;
+  padding: 0;
+  &:hover {
+    background-color: #f0fff0;
+  }
 `;
 
 const X = 3;
@@ -63,27 +51,23 @@ function InstaIcon() {
 const Footer = () => {
   return (
     <Box>
-      <Container>
-        <FooterUl>
-          <FooterLi>
-            <FooterLink>
-              <a
-                href="https://www.instagram.com/begoniabaschy/"
-                rel="noreferrer"
-                target="_blank"
-              >
-                {/* credit to https://fontawesome.com/v5.15/icons/instagram?style=brands */}
-                <i className="fab fa-instagram">
-                  <InstaIcon />
-                </i>
-              </a>
-            </FooterLink>
-          </FooterLi>
-          <FooterLi>
-            <p>Bettinasemail@emailstuff.com</p>
-          </FooterLi>
-        </FooterUl>
-      </Container>
+      <FooterUl>
+        <FooterLi>
+          <FooterLink
+            href="https://www.instagram.com/begoniabaschy/"
+            rel="noreferrer"
+            target="_blank"
+          >
+            {/* credit to https://fontawesome.com/v5.15/icons/instagram?style=brands */}
+            <i className="fab fa-instagram">
+              <InstaIcon />
+            </i>
+          </FooterLink>
+        </FooterLi>
+        <FooterLi>
+          <p>Bettinasemail@emailstuff.com</p>
+        </FooterLi>
+      </FooterUl>
     </Box>
   );
 };
