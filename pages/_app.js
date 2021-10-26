@@ -15,7 +15,8 @@ const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
     padding: 0;
-    background-color: #7CF0BD;
+    /* background-color: #7CF0BD; */
+    background-color: #FFFFFF;
   }
   h1 {
     font-size: 4rem;
