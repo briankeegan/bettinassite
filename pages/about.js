@@ -14,16 +14,16 @@ const Container = styled.div`
 `;
 
 const X = 3;
-const Truck = () => {
+function Family() {
   return (
     <Image
-      src="/pics/truck.png"
-      alt="a picture of a person standing next to a truck"
-      width={2000 / X}
-      height={1500 / X}
+      src="/pics/IMG_9877.jpg"
+      alt="Bettina holding baby"
+      width={1300 / X}
+      height={1570 / X}
     />
   );
-};
+}
 
 const ImageContainer = styled.div`
   margin-top: 2em;
@@ -42,7 +42,7 @@ const About = () => {
     <Container>
       <h1>About</h1>
       <ImageContainer>
-        <Truck />
+        <Family />
       </ImageContainer>
       <ParagraphContainer>
         <p>

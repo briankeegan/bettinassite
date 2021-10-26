@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import Image from 'next/image';
 
-
 const X = 3;
 function Garden() {
   return (
@@ -46,7 +45,6 @@ const UnderConstruction = styled.div`
   flex-direction: column;
   align-items: center;
   margin-top: 5em;
-  
 `;
 
 function HomePage() {
@@ -74,4 +72,3 @@ function HomePage() {
 }
 
 export default HomePage;
-
