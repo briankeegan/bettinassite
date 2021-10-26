@@ -10,16 +10,16 @@ const GlobalStyle = createGlobalStyle`
   * {
       box-sizing: border-box;
       font-family: 'Proza Libre', sans-serif;
-      color: ${(props) => props.theme.colors.oliveDrab7}
+      color: ${(props) => props.theme.colors.oliveDrab7};
+      font-size: 16px;
   }
   body {
     margin: 0;
     padding: 0;
-    /* background-color: #7CF0BD; */
     background-color: #FFFFFF;
   }
   h1 {
-    font-size: 4rem;
+    font-size: 3rem;
       margin: 10px;
   }
   p {
