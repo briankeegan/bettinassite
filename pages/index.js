@@ -3,16 +3,28 @@ import Image from 'next/image';
 
 
 const X = 3;
-function Family() {
+function Garden() {
   return (
     <Image
-      src="/pics/IMG_9877.jpg"
-      alt="Bettina holding baby"
-      width={1300 / X}
-      height={1570 / X}
+      src="/pics/5thAveB.jpg"
+      alt="A white house with a white fence and a new lovely new garden lanscaping in the front, with a path down the middle"
+      width={3000 / X}
+      height={2000 / X}
     />
   );
 }
+
+// const X = 3;
+// function Family() {
+//   return (
+//     <Image
+//       src="/pics/IMG_9877.jpg"
+//       alt="Bettina holding baby"
+//       width={1300 / X}
+//       height={1570 / X}
+//     />
+//   );
+// }
 
 const ImageContainer = styled.div`
   margin-top: 4em;
@@ -29,7 +41,6 @@ const ParagraphContainer = styled.div`
 const UnderConstruction = styled.div`
   position: absolute;
   top: 0; /* Header Height */
-  /* bottom: 0; Footer Height does this work here? */
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -37,7 +48,6 @@ const UnderConstruction = styled.div`
   margin-top: 5em;
   
 `;
-// background-image: url('/pics/IMG_9877.jpg');
 
 function HomePage() {
   return (
@@ -45,7 +55,7 @@ function HomePage() {
       <h1>Begonia Baschy Landscaping</h1>
       {/* how do i target this h1 since its not adding padding? --Brian */}
       <ImageContainer>
-        <Family />
+        <Garden />
       </ImageContainer>
       {/* <p>Bettina's story here?</p> */}
       <ParagraphContainer>
