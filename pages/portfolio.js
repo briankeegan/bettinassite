@@ -14,6 +14,7 @@ const Container = styled.div`
   padding: 2em;
 `;
 
+// find out why photos are loading so slow!
 const X = 3;
 const Central = () => {
   return (
@@ -68,7 +69,7 @@ const _5thAveI = () => {
 };
 
 const ImageContainer = styled.div`
-  margin-top: 5em;
+  margin-top: 3em;
   margin-bottom: 5em;
 `;
 
