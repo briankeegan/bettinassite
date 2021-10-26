@@ -50,8 +50,6 @@ const theme = {
   },
 };
 
-
-
 export default function App({ Component, pageProps }) {
   const router = useRouter();
   const exists = useRef();
@@ -77,11 +75,8 @@ export default function App({ Component, pageProps }) {
       <ThemeProvider theme={theme}>
         <Header />
         <Component {...pageProps} />
-        <Footer theme={theme}/>
+        <Footer />
       </ThemeProvider>
-
-        
-   
     </>
   );
 }
