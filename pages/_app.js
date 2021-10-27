@@ -54,6 +54,7 @@ const theme = {
     nickel: '#646E68',
     peachPuff: '#F5D6BA',
     white: '#ffff',
+    floralWhite: '##FFFAF0',
   },
 };
 
