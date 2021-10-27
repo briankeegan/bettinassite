@@ -11,7 +11,7 @@ const GlobalStyle = createGlobalStyle`
       box-sizing: border-box;
       font-family: 'Proza Libre', sans-serif;
       color: ${(props) => props.theme.colors.oliveDrab7};
-      font-size: 16px;
+      font-size: 16px; 
   }
   body {
     margin: 0;
@@ -35,6 +35,7 @@ const GlobalStyle = createGlobalStyle`
     }};
     width: 30rem;
     margin: 0 auto;
+    
   }
   .submitted-message {
     font-size: 1.5rem;
@@ -48,6 +49,11 @@ const theme = {
     hunterGreen: '#386150ff',
     keppel: '#58b09cff',
     aeroBlue: '#caf7e2ff',
+    operaMauve: '#b48eAe',
+    lightGrey: '#D7D9D7',
+    nickel: '#646E68',
+    peachPuff: '#F5D6BA',
+    white: '#ffff',
   },
 };
 
