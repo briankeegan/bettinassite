@@ -17,8 +17,7 @@ const NavUl = styled.ul`
   flex-direction: row;
   justify-content: flex-end;
   height: 50px;
-  margin-left: 12rem;
-  margin-right: 12rem;
+  margin: 0;
   padding: 0;
   background-color: ${(props) => props.theme.colors.aeroBlue};
 `;
