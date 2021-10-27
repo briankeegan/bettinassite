@@ -2,10 +2,14 @@ import styled from 'styled-components';
 import Image from 'next/image';
 
 const Box = styled.div`
-  background: #caf7e2ff;
+  /* background: #f5d6ba; */
+  background: #ffffff;
+  padding: 0;
+  margin: 0;
   position: fixed;
   bottom: 0;
   width: 100%; //footer box is a little big and squeezes photos in a bit too much
+  height: 4rem;
 `;
 
 // const Container = styled.div`
@@ -31,7 +35,8 @@ const FooterLi = styled.li`
   flex-direction: row;
   align-items: center;
   font-size: 1.5rem;
-  padding: .5rem;
+  padding: 0.5rem;
+  color: ${(props) => props.theme.colors.oliveDrab72};
 `;
 
 const FooterLink = styled.a`
@@ -71,9 +76,7 @@ const Footer = () => {
             </i>
           </FooterLink>
         </FooterLi>
-        <FooterLi>
-          Bettinasemail@emailstuff.com
-        </FooterLi>
+        <FooterLi>Bettinasemail@emailstuff.com</FooterLi>
       </FooterUl>
     </Box>
   );
