@@ -8,18 +8,19 @@ const StyledLink = styled.a`
   font-size: 1.8rem;
   color: ${(props) =>
     props.isActive
-      ? props.theme.colors.oliveDrab7
-      : props.theme.colors.oliveDrab72};
+      ? props.theme.colors.oliveDrab72
+      : props.theme.colors.nickel};
 `;
 
 const NavUl = styled.ul`
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
-  height: 50px;
+  height: 4rem;
   margin: 0;
   padding: 0;
-  background-color: ${(props) => props.theme.colors.aeroBlue};
+  /* position: fixed; */
+  background-color: ${(props) => props.theme.colors.white};
 `;
 
 const NavLi = styled.li`
@@ -48,11 +49,11 @@ const Header = () => {
     <header>
       <NavUl>
         <NavItem href="/" left>
-          LOGO
+          Begonia Baschy Landscaping
         </NavItem>
-        <NavItem href="/about">ABOUT</NavItem>
-        <NavItem href="/portfolio">PORTOLIO</NavItem>
-        <NavItem href="/contact">CONTACT</NavItem>
+        <NavItem href="/about">About</NavItem>
+        <NavItem href="/portfolio">Portfolio</NavItem>
+        <NavItem href="/contact">Contact</NavItem>
       </NavUl>
     </header>
   );
