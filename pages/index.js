@@ -1,45 +1,44 @@
 import styled from 'styled-components';
 import Image from 'next/image';
+import BackgroundImage from '../public/pics/5thAveB.jpg';
 
-const X = 3;
+const X = 4;
 function Garden() {
   return (
     <Image
-      src="/pics/5thAveB.jpg"
+      src={BackgroundImage}
       alt="A white house with a white fence and a new lovely new garden lanscaping in the front, with a path down the middle"
-      width={3000 / X}
-      height={2000 / X}
+      width={6750 / X}
+      height={3000 / X}
+      // width={4025 / X}
+      // height={2528 / X}
     />
   );
 }
 
-// const X = 3;
-// function Family() {
-//   return (
-//     <Image
-//       src="/pics/IMG_9877.jpg"
-//       alt="Bettina holding baby"
-//       width={1300 / X}
-//       height={1570 / X}
-//     />
-//   );
-// }
-
 const ImageContainer = styled.div`
-  margin-top: 4em;
-  margin-bottom: 3em;
+  padding: 0;
+  margin: 0;
 `;
 
-const ParagraphContainer = styled.div`
-  padding-left: 25em;
-  padding-right: 25em;
-  text-align: justify;
-  margin-bottom: 10em;
-`;
+//Background image notes
+/* position: fixed; */
+/* background-image: url(${BackgroundImage});
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; */
+
+// writing notes
+//   padding-left: 10rem;
+//   padding-right: 10rem;
+//   text-align: justify;
+//   margin-bottom: 5em;
+//   font-size: 1.5rem;
 
 const UnderConstruction = styled.div`
   position: absolute;
-  top: 0; /* Header Height */
+  top: 0; //Header Height
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -50,23 +49,9 @@ const UnderConstruction = styled.div`
 function HomePage() {
   return (
     <UnderConstruction>
-      <h1>Begonia Baschy Landscaping</h1>
-      {/* how do i target this h1 since its not adding padding? --Brian */}
       <ImageContainer>
         <Garden />
       </ImageContainer>
-      {/* <p>Bettina's story here?</p> */}
-      <ParagraphContainer>
-        <p>
-          Quis autem vel eum iure reprehenderit, qui in ea voluptate velit esse,
-          quam nihil molestiae consequatur, vel illum, qui dolorem eum fugiat,
-          quo voluptas nulla pariatur? At vero eos et accusamus et iusto odio
-          dignissimos ducimus, qui blanditiis praesentium voluptatum deleniti
-          atque corrupti, quos dolores et quas molestias excepturi sint,
-          obcaecati cupiditate non provident, similique sunt in culpa, qui
-          officia deserunt mollitia animi, id est laborum et dolorum fuga.
-        </p>
-      </ParagraphContainer>
     </UnderConstruction>
   );
 }
