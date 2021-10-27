@@ -76,7 +76,6 @@ const ImageContainer = styled.div`
 const Portfolio = () => {
   return (
     <Container>
-      <h1>Portfolio</h1>
       <ImageContainer>
         <Central />
       </ImageContainer>
