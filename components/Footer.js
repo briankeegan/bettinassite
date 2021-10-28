@@ -1,15 +1,21 @@
 import styled from 'styled-components';
 import Image from 'next/image';
 
-const Box = styled.div`
+const Container = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
   padding: 0;
   margin: 0;
   position: fixed;
   bottom: 0;
   width: 100%;
-  height: 4rem;
-  background-color: #F0F8FF;
-  //${(props) => props.theme.colors.floralwhite};
+  height: 5rem;
+  background-color: #ffffff;
+  /* background: linear-gradient(white 0%, white 15%, #a1bfcd 100%); */
+  /* background-image: linear-gradient(
+135deg,#99b6c6 14%,#bcd8e5 78%); */
 `;
 
 const FooterUl = styled.ul`
@@ -50,7 +56,7 @@ function InstaIcon() {
 
 const Footer = () => {
   return (
-    <Box>
+    <Container>
       <FooterUl>
         <FooterLi>
           <FooterLink
@@ -64,9 +70,11 @@ const Footer = () => {
             </i>
           </FooterLink>
         </FooterLi>
-        <FooterLi>bettinasemail@emailstuff.com</FooterLi>
+        <FooterLi>begoniabaschy@gmail.com</FooterLi>
+        <FooterLi>Licensed, Bonded and Insured</FooterLi>
+        {/* make a do between each item */}
       </FooterUl>
-    </Box>
+    </Container>
   );
 };
 
