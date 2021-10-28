@@ -16,11 +16,11 @@ const NavUl = styled.ul`
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
-  height: 4rem;
+  /* height: 4rem; */
   margin: 0;
   padding: 0;
-  /* position: fixed; */
-  background-color: ${(props) => props.theme.colors.white};
+  background-color: #ffffff;
+  /* background: linear-gradient(#1768ac, white); */
 `;
 
 const NavLi = styled.li`
