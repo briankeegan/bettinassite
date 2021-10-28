@@ -1,12 +1,21 @@
-- Portfolio click through
-- add testimonials!! think more or bettina
+
+
+- about, port, contact and instagram icon(too high up as well) are spaced weird
+- "Thanks for submitting the form." in contacts is crooked
+- Submit button is covered by footer in contact page
+
 - add menu for mobil app
 - make it mobile ready
-- rearrange about foto to the left and text to the write
-- Bettina do you want writing on the fotos in portfolio?
-- whats youre professional email?
-- can you write me some stuff for the parts that have it, if you want it there...?
-- about, port, contact are spaced wierd
+
+
+do stat:
+before and after clickable opac
+geocaching
+
+def do stat asap:
+- about, contactme blurbs
+- bettina will send more fotos for portfolio
+
 
 donish-
 - contact
