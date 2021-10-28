@@ -6,6 +6,7 @@
 - Bettina do you want writing on the fotos in portfolio?
 - whats youre professional email?
 - can you write me some stuff for the parts that have it, if you want it there...?
+- about, port, contact are spaced wierd
 
 donish-
 - contact
