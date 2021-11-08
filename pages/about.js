@@ -22,8 +22,8 @@ function Family() {
       alt="Bettina holding baby"
       width={16000 / X}
       height={19000 / X}
-      // width={3024 / X}
-      // height={4032 / X}
+      // width={3024 / X} // original 
+      // height={4032 / X} //original
     />
   );
 }
@@ -34,6 +34,7 @@ const ImageContainer = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  overflow: hidden;
 `;
 
 const ParagraphContainer = styled.div`
