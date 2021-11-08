@@ -14,7 +14,7 @@ const Contact = () => {
       <h1>Contact me!</h1>
       <Description>
         {
-          "I'd love to hear about your project!  I specialize in being amazing with plants and trees and things like that. I'm sure i'll have more to say, but right now a ghost writer wrote this for me."
+          "Want to get in touch? To schedule a consultation or if you have other questions, please complete the form below."
         }
       </Description>
     </Container>
