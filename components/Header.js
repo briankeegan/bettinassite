@@ -1,10 +1,11 @@
 import Link from 'next/link';
 import styled from 'styled-components';
 import { useRouter } from 'next/router';
+import Image from 'next/image';
 
 const StyledLink = styled.a`
   text-decoration: none;
-  padding: 3.125rem;
+  padding: 2.4rem;
   font-size: 1.8rem;
   color: ${(props) =>
     props.isActive
@@ -20,7 +21,6 @@ const NavUl = styled.ul`
   margin: 0;
   padding: 0;
   background-color: #ffffff;
-  /* background: linear-gradient(#1768ac, white); */
 `;
 
 const NavLi = styled.li`
@@ -28,7 +28,9 @@ const NavLi = styled.li`
   flex-align: center;
   align-items: center;
   margin: 0;
+  padding: 0;
   ${(props) => props.left && 'margin-right: auto;'};
+
 `;
 
 const NavItem = ({ href, children, left }) => {
@@ -44,6 +46,18 @@ const NavItem = ({ href, children, left }) => {
   );
 };
 
+const X = 3;
+function MenuVector() {
+  return (
+    <Image
+      src="/pics/menu_vector.svg"
+      alt="instagram icon"
+      width={85 / X}
+      height={85 / X}
+    />
+  );
+}
+
 const Header = () => {
   return (
     <header>
@@ -54,6 +68,12 @@ const Header = () => {
         <NavItem href="/about">About</NavItem>
         <NavItem href="/portfolio">Portfolio</NavItem>
         <NavItem href="/contact">Contact</NavItem>
+        {/* Icon credit to https://fontawesome.com/v5.15/icons/bars?style=solid */}
+        <NavItem href="/menu">
+          <i className="fas fa-bars">
+            <MenuVector />
+          </i>
+        </NavItem>
       </NavUl>
     </header>
   );
