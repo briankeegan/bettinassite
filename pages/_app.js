@@ -16,7 +16,10 @@ const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
     padding: 0;
-    background-color: #FFFFFF;
+    background: #fff;
+    background: cover;
+    /* background: no-repeat; */
+    height: 100vh;
   }
   h1 {
     font-size: 3rem;
@@ -55,6 +58,8 @@ const theme = {
     peachPuff: '#F5D6BA',
     white: '#ffff',
     floralWhite: '##FFFAF0',
+    aliceBlue: '##F0F8FF',
+    sapphireBlue: '#1768AC',
   },
 };
 
