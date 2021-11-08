@@ -18,18 +18,18 @@ const X = 3;
 function Family() {
   return (
     <Image
-      src="/pics/IMG_9877.jpg"
-      alt="Bettina holding baby"
-      width={16000 / X}
+      src="/pics/bettina_new_about_foto.jpeg"
+      alt="the lanscape artist standing next to a very large green plant"
+      width={15500 / X}
       height={19000 / X}
       // width={3024 / X} // original 
-      // height={4032 / X} //original
+      // height={4032 / X} //original 3024 × 4032
     />
   );
 }
 
 const ImageContainer = styled.div`
-  padding: 3rem;
+  padding-left: 2rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -38,7 +38,7 @@ const ImageContainer = styled.div`
 `;
 
 const ParagraphContainer = styled.div`
-  padding-right: 10rem;
+  padding: 9rem;
   /* text-align: justify; */
 `;
 
