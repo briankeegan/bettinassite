@@ -21,18 +21,20 @@ const Container = styled.div`
 const FooterUl = styled.ul`
   display: flex;
   justify-content: center;
+  align-items: center;
   flex-direction: row;
   margin: 0;
+  padding: 0;
 `;
 
 const FooterLi = styled.li`
-  margin-left: 2em;
+  margin: 2rem;
   display: flex;
   justify-content: center;
   flex-direction: row;
   align-items: center;
   font-size: 1.5rem;
-  padding: 0.5rem;
+  padding: 1rem;
   color: ${(props) => props.theme.colors.oliveDrab72};
 `;
 
@@ -43,7 +45,7 @@ const FooterLink = styled.a`
 `;
 
 const X = 5;
-function InstaIcon() {
+function InstagramIcon() {
   return (
     <Image
       src="/pics/instagram-brands.svg"
@@ -66,13 +68,15 @@ const Footer = () => {
           >
             {/* credit to https://fontawesome.com/v5.15/icons/instagram?style=brands */}
             <i className="fab fa-instagram">
-              <InstaIcon />
+              <InstagramIcon />
             </i>
           </FooterLink>
         </FooterLi>
         <FooterLi>begoniabaschy@gmail.com</FooterLi>
+        <FooterLi>(360) 347-6183</FooterLi>
+        <FooterLi>Olympia, WA</FooterLi>
         <FooterLi>Licensed, Bonded and Insured</FooterLi>
-        {/* make a do between each item */}
+        {/* make a do between each item -- what does this mean?*/}
       </FooterUl>
     </Container>
   );
