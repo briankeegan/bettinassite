@@ -1,8 +1,8 @@
-import { useEffect, useRef } from 'react';
 import { useRouter } from 'next/router';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import styled, { createGlobalStyle, ThemeProvider } from 'styled-components';
+import { createGlobalStyle, ThemeProvider } from 'styled-components';
+import { useYaml, useHubSpotForm } from '../hooks';
 import './_app.css';
 
 // font-family: 'Commissioner', sans-serif;
@@ -33,7 +33,6 @@ const GlobalStyle = createGlobalStyle`
   }
   .hbspt-form {
     display: ${(props) => {
-      console.log(props.showForm);
       return props.showForm ? 'block' : 'none';
     }};
     width: 30rem;
@@ -65,30 +64,15 @@ const theme = {
 
 export default function App({ Component, pageProps }) {
   const router = useRouter();
-  const exists = useRef();
-  useEffect(() => {
-    const script = document.createElement('script');
-    script.src = 'https://js.hsforms.net/forms/v2.js';
-    document.body.appendChild(script);
-
-    script.addEventListener('load', () => {
-      if (window.hbspt && !exists.current) {
-        exists.current = true;
-        window.hbspt.forms.create({
-          region: 'na1',
-          portalId: '7640600',
-          formId: '208ef12e-c09e-4398-ae9b-688f681ff43e',
-        });
-      }
-    });
-  }, []);
+  const copy = useYaml();
+  useHubSpotForm();
   return (
     <>
       <GlobalStyle theme={theme} showForm={router.asPath === '/contact'} />
       <ThemeProvider theme={theme}>
-        <Header />
-        <Component {...pageProps} />
-        <Footer />
+        <Header copy={copy} />
+        <Component copy={copy} {...pageProps} />
+        <Footer copy={copy} />
       </ThemeProvider>
     </>
   );

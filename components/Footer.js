@@ -56,7 +56,8 @@ function InstagramIcon() {
   );
 }
 
-const Footer = () => {
+const Footer = ({ copy }) => {
+  const { footer = [] } = copy;
   return (
     <Container>
       <FooterUl>
@@ -72,10 +73,9 @@ const Footer = () => {
             </i>
           </FooterLink>
         </FooterLi>
-        <FooterLi>begoniabaschy@gmail.com</FooterLi>
-        <FooterLi>(360) 347-6183</FooterLi>
-        <FooterLi>Olympia, WA</FooterLi>
-        <FooterLi>Licensed, Bonded and Insured</FooterLi>
+        {footer.map((item) => {
+          return <FooterLi key={item}>{item}</FooterLi>;
+        })}
         {/* make a do between each item -- what does this mean?*/}
       </FooterUl>
     </Container>
