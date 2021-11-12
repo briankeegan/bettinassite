@@ -1,5 +1,15 @@
 import styled from 'styled-components';
 
-//Maintenance, Design and Install
-// make some writing and fotos?
 
+
+const Container = styled.div``
+
+function Services() {
+    return (
+      <Container>
+        
+      </Container>
+    );
+  }
+  
+  export default Services;
