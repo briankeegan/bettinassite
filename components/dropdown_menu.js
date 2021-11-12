@@ -21,12 +21,10 @@ const Menu = styled.nav`
   margin: 0;
   top: 0;
   left: 0;
-  /* border: solid red; */
   width: 100%;
   height: 100%;
   z-index: ${(props) => (props.hidden ? -1 : 100)};
   opacity: ${(props) => (props.hidden ? 0 : 1)};
-  /* box-shadow: 0 1px 8px rgba(0, 0, 0, 0.3); */
   /* transition: all 4000ms ease; */
 `;
 
