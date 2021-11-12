@@ -6,6 +6,7 @@ const Container = styled.div`
 const Description = styled.p`
   width: 40rem;
   margin: 0 auto;
+  padding: 1rem;
 `;
 
 const Contact = () => {
@@ -14,7 +15,7 @@ const Contact = () => {
       <h1>Contact me!</h1>
       <Description>
         {
-          "Want to get in touch? To schedule a consultation or if you have other questions, please complete the form below."
+          'Want to get in touch? To schedule a consultation or if you have other questions, please complete the form below.'
         }
       </Description>
     </Container>
