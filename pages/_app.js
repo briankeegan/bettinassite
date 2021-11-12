@@ -26,7 +26,7 @@ const GlobalStyle = createGlobalStyle`
       margin: 10px;
   }
   p {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
   }
   ul {
     list-style-type: none;
