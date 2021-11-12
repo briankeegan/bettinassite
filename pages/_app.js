@@ -1,10 +1,10 @@
 import { useRouter } from 'next/router';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import NoMobile from '../components/noMobile';
 import styled, { createGlobalStyle, ThemeProvider } from 'styled-components';
 import { useYaml, useHubSpotForm } from '../hooks';
 import './_app.css';
-import NoMobile from '../components/noMobile';
 
 const MIN_SIZE = '1438px';
 
