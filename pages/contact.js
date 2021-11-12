@@ -1,4 +1,6 @@
+import { useEffect, useState } from 'react';
 import styled from 'styled-components';
+
 const Container = styled.div`
   text-align: center;
 `;
@@ -9,15 +11,12 @@ const Description = styled.p`
   padding: 1rem;
 `;
 
-const Contact = () => {
+const Contact = ({ copy }) => {
+  const { contact = {} } = copy;
   return (
     <Container id="contact">
-      <h1>Contact me!</h1>
-      <Description>
-        {
-          'Want to get in touch? To schedule a consultation or if you have other questions, please complete the form below.'
-        }
-      </Description>
+      <h1>{contact.title}</h1>
+      <Description>{contact.blurb}</Description>
     </Container>
   );
 };

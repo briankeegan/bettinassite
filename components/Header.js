@@ -36,7 +36,6 @@ const NavLi = styled.li`
 const NavItem = ({ href, children, left }) => {
   const router = useRouter();
   const isActive = router.asPath === href;
-  console.log({ isActive });
   return (
     <NavLi left={left}>
       <Link href={href} passHref>
@@ -46,17 +45,18 @@ const NavItem = ({ href, children, left }) => {
   );
 };
 
-const Header = () => {
+const Header = ({ copy }) => {
+  const { navBar = {} } = copy;
   return (
     <header>
       <NavUl>
         <NavItem href="/" left>
-          Begonia Baschy Landscaping
+          {navBar.home}
         </NavItem>
-        <NavItem href="/about">About</NavItem>
-        <NavItem href="/portfolio">Portfolio</NavItem>
-        <NavItem href="/services">Services</NavItem>
-        <NavItem href="/contact">Contact</NavItem>
+        <NavItem href="/about">{navBar.about}</NavItem>
+        <NavItem href="/portfolio">{navBar.portfolio}</NavItem>
+        <NavItem href="/services">{navBar.services}</NavItem>
+        <NavItem href="/contact">{navBar.contact}</NavItem>
         <DropDownMenu />
       </NavUl>
     </header>
