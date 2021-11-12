@@ -11,7 +11,6 @@ const Container = styled.div`
   position: fixed;
   bottom: 0;
   width: 100%;
-  height: 4rem;
   background-color: #ffffff;
   /* background: linear-gradient(white 0%, white 15%, #a1bfcd 100%); */
   /* background-image: linear-gradient(
@@ -25,6 +24,7 @@ const FooterUl = styled.ul`
   flex-direction: row;
   margin: 0;
   padding: 0;
+  flex-wrap: wrap;
 `;
 
 const FooterLi = styled.li`
@@ -34,8 +34,9 @@ const FooterLi = styled.li`
   flex-direction: row;
   align-items: center;
   font-size: 1.5rem;
-  padding: 1rem;
-  color: ${(props) => props.theme.colors.oliveDrab72};
+  padding-left: 1rem;
+  padding-right: 1rem;
+  color: ${(props) => props?.theme?.colors?.oliveDrab72};
 `;
 
 const FooterLink = styled.a`

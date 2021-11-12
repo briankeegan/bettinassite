@@ -22,8 +22,10 @@ const StyledLi = styled.li`
 `;
 
 const ImageContainer = styled.div`
-  display: inline-block;
   padding: 0.5rem;
+  @media (min-width: 1438px) {
+    display: inline-block;
+  }
 `;
 
 const MyImage = ({ src, alt }) => {

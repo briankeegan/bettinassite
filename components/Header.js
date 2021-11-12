@@ -4,7 +4,6 @@ import { useRouter } from 'next/router';
 import DropDownMenu from './dropdown_menu';
 
 const StyledLink = styled.a`
-  margin-left: 3rem;
   text-decoration: none;
   padding: 2.5rem;
   font-size: 1.6rem;
@@ -22,14 +21,16 @@ const NavUl = styled.ul`
   margin: 0;
   padding: 0;
   background-color: #ffffff;
+  margin-left: 3rem;
+  margin-right: 3rem;
 `;
 
 const NavLi = styled.li`
   display: flex;
-  flex-align: center;
   align-items: center;
   margin: 0;
   padding: 0;
+  height: 6rem;
   ${(props) => props.left && 'margin-right: auto;'};
 `;
 
@@ -57,7 +58,7 @@ const Header = ({ copy }) => {
         <NavItem href="/portfolio">{navBar.portfolio}</NavItem>
         <NavItem href="/services">{navBar.services}</NavItem>
         <NavItem href="/contact">{navBar.contact}</NavItem>
-        <DropDownMenu />
+        {/* <DropDownMenu /> */}
       </NavUl>
     </header>
   );
