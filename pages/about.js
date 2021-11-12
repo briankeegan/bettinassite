@@ -28,8 +28,6 @@ function Family() {
       alt="the landscape artist standing next to a very large green plant"
       width={15500 / X}
       height={19000 / X}
-      // width={3024 / X} // original
-      // height={4032 / X} //original 3024 × 4032
     />
   );
 }
