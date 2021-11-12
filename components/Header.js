@@ -1,12 +1,13 @@
 import Link from 'next/link';
 import styled from 'styled-components';
 import { useRouter } from 'next/router';
-import Image from 'next/image';
+import DropDownMenu from '../pages/dropdown_menu';
 
 const StyledLink = styled.a`
+  margin-left: 3rem;
   text-decoration: none;
-  padding: 2.4rem;
-  font-size: 1.8rem;
+  padding: 2.5rem;
+  font-size: 1.6rem;
   color: ${(props) =>
     props.isActive
       ? props.theme.colors.oliveDrab72
@@ -17,7 +18,7 @@ const NavUl = styled.ul`
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
-  /* height: 4rem; */
+  align-items: center;
   margin: 0;
   padding: 0;
   background-color: #ffffff;
@@ -30,7 +31,6 @@ const NavLi = styled.li`
   margin: 0;
   padding: 0;
   ${(props) => props.left && 'margin-right: auto;'};
-
 `;
 
 const NavItem = ({ href, children, left }) => {
@@ -46,18 +46,6 @@ const NavItem = ({ href, children, left }) => {
   );
 };
 
-const X = 3;
-function MenuVector() {
-  return (
-    <Image
-      src="/pics/menu_vector.svg"
-      alt="instagram icon"
-      width={85 / X}
-      height={85 / X}
-    />
-  );
-}
-
 const Header = () => {
   return (
     <header>
@@ -67,13 +55,9 @@ const Header = () => {
         </NavItem>
         <NavItem href="/about">About</NavItem>
         <NavItem href="/portfolio">Portfolio</NavItem>
+        <NavItem href="/services">Services</NavItem>
         <NavItem href="/contact">Contact</NavItem>
-        {/* Icon credit to https://fontawesome.com/v5.15/icons/bars?style=solid */}
-        <NavItem href="/menu">
-          <i className="fas fa-bars">
-            <MenuVector />
-          </i>
-        </NavItem>
+        <DropDownMenu />
       </NavUl>
     </header>
   );
