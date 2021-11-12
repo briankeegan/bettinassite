@@ -1,26 +1,27 @@
 import Link from 'next/link';
 import styled from 'styled-components';
 import { useRouter } from 'next/router';
+import DropDownMenu from './dropdown_menu';
 
 const StyledLink = styled.a`
+  margin-left: 3rem;
   text-decoration: none;
-  padding: 3.125rem;
-  font-size: 1.8rem;
+  padding: 2.5rem;
+  font-size: 1.6rem;
   color: ${(props) =>
     props.isActive
-      ? props.theme.colors.oliveDrab7
-      : props.theme.colors.oliveDrab72};
+      ? props.theme.colors.oliveDrab72
+      : props.theme.colors.nickel};
 `;
 
 const NavUl = styled.ul`
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
-  height: 50px;
-  margin-left: 12rem;
-  margin-right: 12rem;
+  align-items: center;
+  margin: 0;
   padding: 0;
-  background-color: ${(props) => props.theme.colors.aeroBlue};
+  background-color: #ffffff;
 `;
 
 const NavLi = styled.li`
@@ -28,13 +29,13 @@ const NavLi = styled.li`
   flex-align: center;
   align-items: center;
   margin: 0;
+  padding: 0;
   ${(props) => props.left && 'margin-right: auto;'};
 `;
 
 const NavItem = ({ href, children, left }) => {
   const router = useRouter();
   const isActive = router.asPath === href;
-  console.log({ isActive });
   return (
     <NavLi left={left}>
       <Link href={href} passHref>
@@ -44,16 +45,19 @@ const NavItem = ({ href, children, left }) => {
   );
 };
 
-const Header = () => {
+const Header = ({ copy }) => {
+  const { navBar = {} } = copy;
   return (
     <header>
       <NavUl>
         <NavItem href="/" left>
-          LOGO
+          {navBar.home}
         </NavItem>
-        <NavItem href="/about">ABOUT</NavItem>
-        <NavItem href="/portfolio">PORTOLIO</NavItem>
-        <NavItem href="/contact">CONTACT</NavItem>
+        <NavItem href="/about">{navBar.about}</NavItem>
+        <NavItem href="/portfolio">{navBar.portfolio}</NavItem>
+        <NavItem href="/services">{navBar.services}</NavItem>
+        <NavItem href="/contact">{navBar.contact}</NavItem>
+        <DropDownMenu />
       </NavUl>
     </header>
   );

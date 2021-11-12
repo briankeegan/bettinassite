@@ -1,51 +1,34 @@
 import styled from 'styled-components';
 import Image from 'next/image';
+import BackgroundImage from '../public/pics/5thAveB.jpg';
 
-const X = 3;
-function Truck() {
+const X = 4;
+function Garden() {
   return (
     <Image
-      src="/pics/truck.png"
-      alt="Bettina next to loaded truck"
-      width={1874 / X}
-      height={1412 / X}
+      src={BackgroundImage} //pass in image
+      alt="A white house with a white fence and a new lovely new garden landscaping in the front, with a path down the middle"
+      width={6032 / X}
+      height={3024 / X}
+      // 4032 × 3024 OG
     />
   );
 }
 
-const ImageContainer = styled.div`
-  margin-top: 5em;
-`;
-
 const UnderConstruction = styled.div`
   position: absolute;
-  top: 0; /* Header Height */
-  bottom: 0; /* Footer Height */
+  top: 6rem; //Header Height // how do i want the header and footer? if i dont want the top to be so close the edge of the page then i either have to do the same to the bottom or have them be different sizes...
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 5em;
+  /* margin-top: 4em; */
 `;
-// background-image: url('/pics/truck.png');
 
 function HomePage() {
   return (
     <UnderConstruction>
-      <h1>New website coming soon!</h1>
-      <p>
-        In the meantime, please check out my{' '}
-        <a
-          href="https://www.instagram.com/begoniabaschy/"
-          rel="noreferrer"
-          target="_blank"
-        >
-          instagram
-        </a>
-      </p>
-      <ImageContainer>
-        <Truck />
-      </ImageContainer>
+      <Garden />
     </UnderConstruction>
   );
 }
