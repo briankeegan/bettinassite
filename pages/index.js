@@ -6,52 +6,29 @@ const X = 4;
 function Garden() {
   return (
     <Image
-      src={BackgroundImage}
-      alt="A white house with a white fence and a new lovely new garden lanscaping in the front, with a path down the middle"
-      width={6750 / X}
-      height={3000 / X}
-      // width={4025 / X}
-      // height={2528 / X}
+      src={BackgroundImage} //pass in image
+      alt="A white house with a white fence and a new lovely new garden landscaping in the front, with a path down the middle"
+      width={6032 / X}
+      height={3024 / X}
+      // 4032 × 3024 OG
     />
   );
 }
 
-const ImageContainer = styled.div`
-  padding: 0;
-  margin: 0;
-`;
-
-//Background image notes
-/* position: fixed; */
-/* background-image: url(${BackgroundImage});
-  height: 100%;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover; */
-
-// writing notes
-//   padding-left: 10rem;
-//   padding-right: 10rem;
-//   text-align: justify;
-//   margin-bottom: 5em;
-//   font-size: 1.5rem;
-
 const UnderConstruction = styled.div`
   position: absolute;
-  top: 0; //Header Height
+  top: 6rem; //Header Height // how do i want the header and footer? if i dont want the top to be so close the edge of the page then i either have to do the same to the bottom or have them be different sizes...
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 5em;
+  /* margin-top: 4em; */
 `;
 
 function HomePage() {
   return (
     <UnderConstruction>
-      <ImageContainer>
-        <Garden />
-      </ImageContainer>
+      <Garden />
     </UnderConstruction>
   );
 }
