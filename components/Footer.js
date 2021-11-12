@@ -11,7 +11,7 @@ const Container = styled.div`
   position: fixed;
   bottom: 0;
   width: 100%;
-  height: 5rem;
+  height: 4rem;
   background-color: #ffffff;
   /* background: linear-gradient(white 0%, white 15%, #a1bfcd 100%); */
   /* background-image: linear-gradient(
@@ -28,7 +28,7 @@ const FooterUl = styled.ul`
 `;
 
 const FooterLi = styled.li`
-  margin: 2rem;
+  margin: 1rem;
   display: flex;
   justify-content: center;
   flex-direction: row;
