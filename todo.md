@@ -1,25 +1,15 @@
 
 
-- about, port, contact and instagram icon(too high up as well) are spaced weird
-- "Thanks for submitting the form." in contacts is crooked
-- Submit button is covered by footer in contact page
-- change color of instragram icon? do we like the icon?
+- about, port, contact and instagram icon(too high up as well) are spaced weird 
+- footer and header should be the same height?
+- the message box in contacts is broken when enlarged
 
-- add menu for mobil app
-- make it mobile ready
-
-
-do stat:
-before and after clickable opac
-geocaching
+-- make it mobile ready
+- menu needs to appear when ipad or phone size
+- menu underline wont go away
+- remove menu hamburger when dropdown is clicked
+- cant affect font
 
 def do stat asap:
-- about, contactme blurbs
-- bettina will send more fotos for portfolio
+- Bettina will send more fotos for portfolio/services
 
-
-donish-
-- contact
-  - email
-  -instgram button
-- (hubspot) form

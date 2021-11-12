@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import styled from 'styled-components';
 import { useRouter } from 'next/router';
-import DropDownMenu from '../pages/dropdown_menu';
+import DropDownMenu from './dropdown_menu';
 
 const StyledLink = styled.a`
   margin-left: 3rem;

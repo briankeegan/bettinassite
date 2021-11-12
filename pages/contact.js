@@ -8,6 +8,7 @@ const Container = styled.div`
 const Description = styled.p`
   width: 40rem;
   margin: 0 auto;
+  padding: 1rem;
 `;
 
 const Contact = ({ copy }) => {
