@@ -44,8 +44,8 @@ function NoMobile(props) {
     <UnderConstruction>
       <h1>Mobile verion coming soon!</h1>
       <StyledP>
-        In the meantime, StyledPlease check out my please use your computational
-        device, or (BIG) tablet.
+        In the meantime, please use your computational device, or (BIG) tablet -
+        that site works!
       </StyledP>
       <ImageContainer>
         <Truck />
