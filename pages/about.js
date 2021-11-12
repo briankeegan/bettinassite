@@ -18,10 +18,6 @@ const Container = styled.div`
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  /* padding: 2em; */
-  /* margin-left: 4rem;
-  margin-right: 4rem; */
-  border: solid red;
 `;
 
 const X = 3;
@@ -32,8 +28,6 @@ function Family() {
       alt="the landscape artist standing next to a very large green plant"
       width={15500 / X}
       height={19000 / X}
-      // width={3024 / X} // original
-      // height={4032 / X} //original 3024 × 4032
     />
   );
 }
@@ -55,10 +49,6 @@ const HeaderContainer = styled.h1`
   margin: 0;
 `;
 
-const ParagraphContainer = styled.p`
-  border: solid red;
-`;
-
 const About = () => {
   return (
     <Container>
@@ -67,7 +57,7 @@ const About = () => {
       </ImageContainer>
       <TextContainer>
         <HeaderContainer>{AboutTitle}</HeaderContainer>
-        <ParagraphContainer>{AboutBlurb}</ParagraphContainer>
+        <p>{AboutBlurb}</p>
       </TextContainer>
     </Container>
   );

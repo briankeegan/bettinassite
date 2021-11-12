@@ -28,7 +28,7 @@ const ImageContainer = styled.div`
   }
 `;
 
-const MyImage = ({ src, alt }) => {
+const ServicesImage = ({ src, alt }) => {
   const X = 3;
   return <Image src={src} alt={alt} width={2035 / X} height={1570 / X} />;
 };
@@ -39,13 +39,13 @@ function Services() {
       <ul>
         <StyledLi>Design</StyledLi>
         <ImageContainer>
-          <MyImage
+          <ServicesImage
             src={BeforeTullis}
             alt="An image of a persons garden before it's redone. It's on a small hill with two rows of stone"
           />
         </ImageContainer>
         <ImageContainer>
-          <MyImage
+          <ServicesImage
             src={AfterTullis}
             alt="An image of a persons garden before it's redone. It's on a small hill with two rows of stone separating the hill where the plants will go."
           />
@@ -53,26 +53,26 @@ function Services() {
 
         <StyledLi>Install</StyledLi>
         <ImageContainer>
-          <MyImage
+          <ServicesImage
             src={BeforeCentral}
             alt="An image of a persons garden before it's redone. It's on a small hill with two rows of stone"
           />
         </ImageContainer>
         <ImageContainer>
-          <MyImage
+          <ServicesImage
             src={AfterCentral}
             alt="An image of a persons garden before it's redone. It's on a small hill with two rows of stone separating the hill where the plants will go."
           />
         </ImageContainer>
         <StyledLi>Maintenance</StyledLi>
         <ImageContainer>
-          <MyImage
+          <ServicesImage
             src={_5thAveMaintenance}
             alt="An image of a persons garden before it's redone. It's on a small hill with two rows of stone"
           />
         </ImageContainer>
         <ImageContainer>
-          <MyImage
+          <ServicesImage
             src={_5thAveMaintenance_2}
             alt="An image of a persons garden before it's redone. It's on a small hill with two rows of stone separating the hill where the plants will go."
           />
