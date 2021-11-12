@@ -28,7 +28,7 @@ services:
 navBar:
   home: Begonia Baschy Landscaping
   about: About
-  portfolio: Portfolios
+  portfolio: Portfolio
   services: Services
   contact: Contact
 #
