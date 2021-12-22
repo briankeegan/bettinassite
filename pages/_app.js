@@ -1,23 +1,10 @@
 import { useRouter } from 'next/router';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import NoMobile from '../components/NoMobile';
-import styled, { createGlobalStyle, ThemeProvider } from 'styled-components';
+
+import { createGlobalStyle, ThemeProvider } from 'styled-components';
 import { useYaml, useHubSpotForm } from '../hooks';
 import './_app.css';
-
-const MIN_SIZE = '1438px';
-
-const StyledVisibility = styled.div`
-  @media (max-width: ${MIN_SIZE}) {
-    display: none;
-  }
-`;
-const StyledHidden = styled.div`
-  @media (min-width: ${MIN_SIZE}) {
-    display: none;
-  }
-`;
 
 // font-family: 'Commissioner', sans-serif;
 const GlobalStyle = createGlobalStyle`
@@ -51,9 +38,6 @@ const GlobalStyle = createGlobalStyle`
     }};
     width: 30rem;
     margin: 0 auto;
-    @media (max-width: ${MIN_SIZE}) {
-      visibility: hidden;
-    }
   }
   .submitted-message {
     font-size: 1.5rem;
@@ -84,17 +68,12 @@ export default function App({ Component, pageProps }) {
   useHubSpotForm();
   return (
     <>
-      <StyledHidden>
-        <NoMobile copy={copy} />
-      </StyledHidden>
-      <StyledVisibility>
-        <GlobalStyle theme={theme} showForm={router.asPath === '/contact'} />
-        <ThemeProvider theme={theme}>
-          <Header copy={copy} />
-          <Component copy={copy} {...pageProps} />
-          <Footer copy={copy} />
-        </ThemeProvider>
-      </StyledVisibility>
+      <GlobalStyle theme={theme} showForm={router.asPath === '/contact'} />
+      <ThemeProvider theme={theme}>
+        <Header copy={copy} />
+        <Component copy={copy} {...pageProps} />
+        <Footer copy={copy} />
+      </ThemeProvider>
     </>
   );
 }
