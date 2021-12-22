@@ -6,6 +6,12 @@ import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 
+const Button = styled.button`
+  display: flex;
+  align-items: center;
+  z-index: 100;
+`;
+
 const CloseContainer = styled.div`
   position: absolute;
   top: 1rem;
@@ -33,28 +39,22 @@ const OpenButton = ({ onClick, hidden }) => (
   </OpenContainer>
 );
 
-const styledA = styled.a`
+const StyledA = styled.a`
   text-decoration: none;
+  :hover {
+    cursor: pointer;
+  }
 `;
 
 const LinkWithOnClick = forwardRef(({ onClick, href, children }, ref) => {
   return (
     <Link href={href} passHref>
-      <styledA href={href} onClick={onClick} ref={ref}>
+      <StyledA href={href} onClick={onClick} ref={ref}>
         {children}
-      </styledA>
+      </StyledA>
     </Link>
   );
 });
-
-const Button = styled.button`
-  display: flex;
-  align-items: center;
-  z-index: 100;
-  :hover {
-    cursor: pointer;
-  }
-`;
 
 const Menu = styled.nav`
   display: flex;

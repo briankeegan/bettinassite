@@ -22,6 +22,7 @@ const GlobalStyle = createGlobalStyle`
     background: cover;
     /* background: no-repeat; */
     height: 100vh;
+    width: 100%;
   }
   h1 {
     font-size: 3rem;
@@ -40,7 +41,6 @@ const GlobalStyle = createGlobalStyle`
     width: 100%;
     max-width: 30rem;
     margin: 0 auto;
-
   }
   .submitted-message {
     font-size: 1.5rem;
@@ -66,7 +66,7 @@ const GlobalStyle = createGlobalStyle`
 
   button:hover,
   button:focus {
-      background: transparent
+      background: transparent;
   }
 
   button:focus {
