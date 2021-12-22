@@ -5,8 +5,6 @@ import { createGlobalStyle, ThemeProvider } from 'styled-components';
 import { useYaml, useHubSpotForm } from '../hooks';
 import './_app.css';
 
-
-
 // font-family: 'Commissioner', sans-serif;
 const GlobalStyle = createGlobalStyle`
   * {
@@ -35,10 +33,12 @@ const GlobalStyle = createGlobalStyle`
   }
   .hbspt-form {
     display: ${(props) => {
-      return props.showForm ? 'block' : 'none';
+      return props.showForm ? 'flex' : 'none';
     }};
-    width: 30rem;
+    width: 100%;
+    max-width: 30rem;
     margin: 0 auto;
+
   }
   .submitted-message {
     font-size: 1.5rem;
