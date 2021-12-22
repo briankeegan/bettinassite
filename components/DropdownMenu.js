@@ -3,13 +3,46 @@ import Link from 'next/link';
 import styled from 'styled-components';
 import Image from 'next/image';
 import { useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
+
+const CloseContainer = styled.div`
+  position: absolute;
+  top: 1rem;
+  right: 3rem;
+`;
+
+const CloseButton = ({ onClick }) => (
+  <CloseContainer>
+    <Button onClick={onClick}>
+      <FontAwesomeIcon icon={faTimes} css={{ fontSize: '2rem' }} />
+    </Button>
+  </CloseContainer>
+);
+const OpenContainer = styled.div`
+  z-index: ${(props) => (props.hidden ? -1 : 1)};
+  opacity: ${(props) => (props.hidden ? 0 : 1)};
+  transition: all 500ms ease 350ms;
+  font-size: 2rem;
+`;
+const OpenButton = ({ onClick, hidden }) => (
+  <OpenContainer hidden={hidden}>
+    <Button onClick={onClick}>
+      <FontAwesomeIcon icon={faBars} css={{ fontSize: '1.8rem' }} />
+    </Button>
+  </OpenContainer>
+);
+
+const styledA = styled.a`
+  text-decoration: none;
+`;
 
 const LinkWithOnClick = forwardRef(({ onClick, href, children }, ref) => {
   return (
     <Link href={href} passHref>
-      <a href={href} onClick={onClick} ref={ref}>
+      <styledA href={href} onClick={onClick} ref={ref}>
         {children}
-      </a>
+      </styledA>
     </Link>
   );
 });
@@ -53,8 +86,8 @@ const MenuLi = styled.li`
   justify-content: center;
   align-items: center;
   margin: 10rem;
-  border: solid blue;
   text-decoration: none;
+  font-size: 30px;
 `;
 
 const X = 3;
@@ -74,11 +107,7 @@ function DropDownMenu() {
   const handleClick = () => setIsActive(!isActive); //update or "set" aka (setIsActive)... click event from false to true (isActive)
   return (
     <>
-      <Button onClick={handleClick} className="fas fa-bars">
-        {/* Icon credit to https://fontawesome.com/v5.15/icons/bars?style=solid */}
-        <MenuIcon />
-      </Button>
-
+      <OpenButton onClick={handleClick} hidden={isActive} />
       <Menu hidden={!isActive}>
         <MenuUl>
           <MenuLi>
@@ -102,10 +131,7 @@ function DropDownMenu() {
             </LinkWithOnClick>
           </MenuLi>
         </MenuUl>
-        <Button onClick={handleClick} className="fas fa-bars">
-          {/* Icon credit to https://fontawesome.com/v5.15/icons/bars?style=solid */}
-          <MenuIcon />
-        </Button>
+        <CloseButton onClick={handleClick} />
       </Menu>
     </>
   );

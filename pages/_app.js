@@ -7,11 +7,13 @@ import './_app.css';
 
 // font-family: 'Commissioner', sans-serif;
 const GlobalStyle = createGlobalStyle`
+  html {
+    font-size: 16px;
+  }
   * {
       box-sizing: border-box;
       font-family: 'Proza Libre', sans-serif;
       color: ${(props) => props.theme.colors.oliveDrab7};
-      font-size: 16px; 
   }
   body {
     margin: 0;
@@ -42,6 +44,38 @@ const GlobalStyle = createGlobalStyle`
   }
   .submitted-message {
     font-size: 1.5rem;
+  }
+  /* Button reset credit https://css-tricks.com/overriding-default-button-styles/ */
+  button {
+    display: inline-block;
+    border: none;
+    padding: 1rem 2rem;
+    margin: 0;
+    text-decoration: none;
+    background: transparent;
+    color: #ffffff;
+    font-family: sans-serif;
+    font-size: 1rem;
+    cursor: pointer;
+    text-align: center;
+    transition: background 250ms ease-in-out, 
+                transform 150ms ease;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+  }
+
+  button:hover,
+  button:focus {
+      background: transparent
+  }
+
+  button:focus {
+      outline: 1px solid #fff;
+      outline-offset: -4px;
+  }
+
+  button:active {
+      transform: scale(0.99);
   }
 `;
 
