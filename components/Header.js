@@ -65,10 +65,7 @@ const Header = ({ copy }) => {
             <NavItem href="/contact">{navBar.contact}</NavItem>
           </>
         )}
-        {isTabletOrMobile && (
-          <DropdownMenu />
-        )}
-        {/* <DropDownMenu /> */}
+        {isTabletOrMobile && <DropdownMenu />}
       </NavUl>
     </header>
   );

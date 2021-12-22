@@ -17,8 +17,10 @@ const LinkWithOnClick = forwardRef(({ onClick, href, children }, ref) => {
 const Button = styled.button`
   display: flex;
   align-items: center;
-  border: solid red;
   z-index: 100;
+  :hover {
+    cursor: pointer;
+  }
 `;
 
 const Menu = styled.nav`
@@ -36,7 +38,7 @@ const Menu = styled.nav`
   height: 100%;
   z-index: ${(props) => (props.hidden ? -1 : 100)};
   opacity: ${(props) => (props.hidden ? 0 : 1)};
-  /* transition: all 4000ms ease; */
+  transition: all 500ms ease 350ms;
 `;
 
 const MenuUl = styled.ul`
