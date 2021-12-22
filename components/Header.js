@@ -1,7 +1,8 @@
 import Link from 'next/link';
 import styled from 'styled-components';
 import { useRouter } from 'next/router';
-import DropDownMenu from './dropdown_menu';
+import DropdownMenu from './DropdownMenu';
+import { useIsTabletOrMobile } from '../hooks';
 
 const StyledLink = styled.a`
   text-decoration: none;
@@ -47,6 +48,7 @@ const NavItem = ({ href, children, left }) => {
 };
 
 const Header = ({ copy }) => {
+  const isTabletOrMobile = useIsTabletOrMobile();
   const { navBar = {} } = copy;
   return (
     <header>
@@ -54,10 +56,18 @@ const Header = ({ copy }) => {
         <NavItem href="/" left>
           {navBar.home}
         </NavItem>
-        <NavItem href="/about">{navBar.about}</NavItem>
-        <NavItem href="/portfolio">{navBar.portfolio}</NavItem>
-        <NavItem href="/services">{navBar.services}</NavItem>
-        <NavItem href="/contact">{navBar.contact}</NavItem>
+
+        {!isTabletOrMobile && (
+          <>
+            <NavItem href="/about">{navBar.about}</NavItem>
+            <NavItem href="/portfolio">{navBar.portfolio}</NavItem>
+            <NavItem href="/services">{navBar.services}</NavItem>
+            <NavItem href="/contact">{navBar.contact}</NavItem>
+          </>
+        )}
+        {isTabletOrMobile && (
+          <DropdownMenu />
+        )}
         {/* <DropDownMenu /> */}
       </NavUl>
     </header>

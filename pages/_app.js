@@ -1,10 +1,11 @@
 import { useRouter } from 'next/router';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-
 import { createGlobalStyle, ThemeProvider } from 'styled-components';
 import { useYaml, useHubSpotForm } from '../hooks';
 import './_app.css';
+
+
 
 // font-family: 'Commissioner', sans-serif;
 const GlobalStyle = createGlobalStyle`

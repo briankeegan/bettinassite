@@ -1,5 +1,6 @@
 import { useEffect, useState, useRef } from 'react';
 import { load } from 'js-yaml';
+import { useMediaQuery } from 'react-responsive';
 
 export const useYaml = () => {
   const [data, setData] = useState({});
@@ -32,4 +33,9 @@ export const useHubSpotForm = () => {
       }
     });
   }, []);
+};
+
+export const useIsTabletOrMobile = () => {
+  const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1438px)' });
+  return isTabletOrMobile;
 };

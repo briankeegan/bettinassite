@@ -1,7 +1,18 @@
+import { forwardRef } from 'react';
 import Link from 'next/link';
 import styled from 'styled-components';
 import Image from 'next/image';
 import { useState } from 'react';
+
+const LinkWithOnClick = forwardRef(({ onClick, href, children }, ref) => {
+  return (
+    <Link href={href} passHref>
+      <a href={href} onClick={onClick} ref={ref}>
+        {children}
+      </a>
+    </Link>
+  );
+});
 
 const Button = styled.button`
   display: flex;
@@ -69,16 +80,24 @@ function DropDownMenu() {
       <Menu hidden={!isActive}>
         <MenuUl>
           <MenuLi>
-            <Link href="/about">About</Link>
+            <LinkWithOnClick onClick={handleClick} href="/about">
+              About
+            </LinkWithOnClick>
           </MenuLi>
           <MenuLi>
-            <Link href="/portfolio">Portfolio</Link>
+            <LinkWithOnClick onClick={handleClick} href="/portfolio">
+              Portfolio
+            </LinkWithOnClick>
           </MenuLi>
           <MenuLi>
-            <Link href="/services">Services</Link>
+            <LinkWithOnClick onClick={handleClick} href="/services">
+              Services
+            </LinkWithOnClick>
           </MenuLi>
           <MenuLi>
-            <Link href="/contact">Contact</Link>
+            <LinkWithOnClick onClick={handleClick} href="/contact">
+              Contact
+            </LinkWithOnClick>
           </MenuLi>
         </MenuUl>
         <Button onClick={handleClick} className="fas fa-bars">
@@ -91,4 +110,3 @@ function DropDownMenu() {
 }
 
 export default DropDownMenu;
-
