@@ -4,9 +4,15 @@
 #
 about:
   title: About
+  blurb: 
 contact:
   title: Contact me!
   blurb: Want to get in touch? To schedule a consultation or if you have other questions, please complete the form below.
+  # mobile side
+  email: 'begoniabaschy@gmail.com'
+  phone: (360) 347-6183
+  location: Olympia, WA
+  insured: Licensed, Bonded and Insured
 home:
   # Currently we don't have a title or blurb
   # So this is a placeholder
@@ -27,10 +33,12 @@ services:
 #
 navBar:
   home: Begonia Baschy Landscaping
+  mobileHome: BBL
   about: About
   portfolio: Portfolio
   services: Services
   contact: Contact
+
 #
 # Footer
 #
