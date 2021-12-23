@@ -77,7 +77,6 @@ const Footer = ({ copy }) => {
         {footer.map((item) => {
           return <FooterLi key={item}>{item}</FooterLi>;
         })}
-        {/* make a do between each item -- what does this mean?*/}
       </FooterUl>
     </Container>
   );

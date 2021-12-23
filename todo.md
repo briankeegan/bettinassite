@@ -13,3 +13,9 @@
 def do stat asap:
 - Bettina will send more fotos for portfolio/services
 
+///start over
+- footer missing add somehow, def instgram
+- BBL to css 
+- menu css, smaller and further right
+- title page image is too wide...use tablet hook and too small
+- 
