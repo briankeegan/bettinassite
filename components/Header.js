@@ -35,6 +35,11 @@ const NavLi = styled.li`
   ${(props) => props.left && 'margin-right: auto;'};
 `;
 
+const MobileHome = styled.li`
+  margin: auto 0;
+  padding: 0;
+`;
+
 const NavItem = ({ href, children, left }) => {
   const router = useRouter();
   const isActive = router.asPath === href;
@@ -53,9 +58,11 @@ const Header = ({ copy }) => {
   return (
     <header>
       <NavUl>
-        <NavItem href="/" left>
-          {navBar.home}
-        </NavItem>
+        {!isTabletOrMobile && (
+          <NavItem href="/" left>
+            {navBar.home}
+          </NavItem>
+        )}
 
         {!isTabletOrMobile && (
           <>
@@ -65,6 +72,14 @@ const Header = ({ copy }) => {
             <NavItem href="/contact">{navBar.contact}</NavItem>
           </>
         )}
+        <MobileHome>
+          {isTabletOrMobile && (
+            <NavItem href="/" left>
+              {navBar.mobileHome}
+            </NavItem>
+          )}
+        </MobileHome>
+
         {isTabletOrMobile && <DropdownMenu />}
       </NavUl>
     </header>
