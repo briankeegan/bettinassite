@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import styled from 'styled-components';
+import { useIsTabletOrMobile } from '../hooks';
 
 const Container = styled.div`
   text-align: center;
@@ -12,11 +13,24 @@ const Description = styled.p`
 `;
 
 const Contact = ({ copy }) => {
+  const isTabletOrMobile = useIsTabletOrMobile();
   const { contact = {} } = copy;
   return (
     <Container id="contact">
-      <h1>{contact.title}</h1>
-      <Description>{contact.blurb}</Description>
+      {!isTabletOrMobile && (
+        <>
+          <h1>{contact.title}</h1>
+          <Description>{contact.blurb}</Description>
+        </>
+      )}
+      {isTabletOrMobile && (
+        <>
+          <h2>{contact.title}</h2>
+          <p>{contact.insured}</p>
+          <p>{contact.email}</p>
+          <p>{contact.phone}</p>
+        </>
+      )}
     </Container>
   );
 };

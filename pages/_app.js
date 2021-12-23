@@ -2,7 +2,7 @@ import { useRouter } from 'next/router';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { createGlobalStyle, ThemeProvider } from 'styled-components';
-import { useYaml, useHubSpotForm } from '../hooks';
+import { useYaml, useHubSpotForm, useIsTabletOrMobile } from '../hooks';
 import './_app.css';
 
 // font-family: 'Commissioner', sans-serif;
@@ -41,6 +41,7 @@ const GlobalStyle = createGlobalStyle`
     width: 100%;
     max-width: 30rem;
     margin: 0 auto;
+    padding: 2rem;
   }
   .submitted-message {
     font-size: 1.5rem;
@@ -101,13 +102,14 @@ export default function App({ Component, pageProps }) {
   const router = useRouter();
   const copy = useYaml();
   useHubSpotForm();
+  const isTabletOrMobile = useIsTabletOrMobile();
   return (
     <>
       <GlobalStyle theme={theme} showForm={router.asPath === '/contact'} />
       <ThemeProvider theme={theme}>
         <Header copy={copy} />
         <Component copy={copy} {...pageProps} />
-        <Footer copy={copy} />
+        {!isTabletOrMobile && <Footer copy={copy} />}
       </ThemeProvider>
     </>
   );
