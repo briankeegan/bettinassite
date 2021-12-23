@@ -13,11 +13,12 @@ I offer garden designs that focus on enhancing the environment for my clients as
 When I’m not in my client’s gardens, I’m usually in mine with my toddler. When I’m home, you can find me knitting, sewing or remodeling my home and watching my favorite reality TV shows 90 Day Fiance or The Bachelor.`;
 
 const Container = styled.div`
-  position: absolute;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 1rem;
+  margin: 1rem;
 `;
 
 const X = 3;
@@ -32,33 +33,18 @@ function Family() {
   );
 }
 
-const ImageContainer = styled.div`
-  padding-left: 2rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+const HeaderContainer = styled.h1`
+  text-align: center;
 `;
 
-const TextContainer = styled.div`
-  display: block;
-  padding: 0;
-  margin: 5rem;
-`;
-const HeaderContainer = styled.h1`
-  margin: 0;
-`;
+const Blurb = styled.p``;
 
 const About = () => {
   return (
     <Container>
-      <ImageContainer>
-        <Family />
-      </ImageContainer>
-      <TextContainer>
-        <HeaderContainer>{AboutTitle}</HeaderContainer>
-        <p>{AboutBlurb}</p>
-      </TextContainer>
+      <HeaderContainer>{AboutTitle}</HeaderContainer>
+      <Family />
+      <p>{AboutBlurb}</p>
     </Container>
   );
 };
