@@ -15,7 +15,7 @@ const Button = styled.button`
 const CloseContainer = styled.div`
   position: absolute;
   top: 1rem;
-  right: 3rem;
+  right: 1rem;
 `;
 
 const CloseButton = ({ onClick }) => (
@@ -79,28 +79,20 @@ const MenuUl = styled.ul`
   text-decoration: none;
   padding: 0;
   margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: space-around;
+  height: 100%;
 `;
 
 const MenuLi = styled.li`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 10rem;
   text-decoration: none;
   font-size: 30px;
 `;
-
-const X = 3;
-function MenuIcon() {
-  return (
-    <Image
-      src="/pics/menu_vector.svg"
-      alt="instagram icon"
-      width={60 / X}
-      height={83 / X}
-    />
-  );
-}
 
 function DropDownMenu() {
   const [isActive, setIsActive] = useState(false);
