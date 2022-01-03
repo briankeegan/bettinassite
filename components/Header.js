@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import { useRouter } from 'next/router';
 import DropdownMenu from './DropdownMenu';
 import { useIsTabletOrMobile } from '../hooks';
-import Image from 'next/image';
 
 const StyledLink = styled.a`
   text-decoration: none;
@@ -21,8 +20,6 @@ const StyledLink = styled.a`
   }
 `;
 
-
-
 const NavUl = styled.ul`
   display: flex;
   flex-direction: row;
@@ -38,6 +35,8 @@ const NavUl = styled.ul`
     padding: 0;
     margin: 0;
     bottom: 0;
+    margin-left: 1rem;
+    margin-right: 1rem;
   }
 `;
 
@@ -49,18 +48,6 @@ const NavLi = styled.li`
   height: 6rem;
   ${(props) => props.left && 'margin-right: auto;'};
 `;
-
-const X = 5;
-function InstagramIcon() {
-  return (
-    <Image
-      src="/pics/instagram-brands.svg"
-      alt="instagram icon"
-      width={200 / X}
-      height={200 / X}
-    />
-  );
-}
 
 const NavItem = ({ href, children, left }) => {
   const router = useRouter();
@@ -92,16 +79,6 @@ const Header = ({ copy }) => {
             <NavItem href="/portfolio">{navBar.portfolio}</NavItem>
             <NavItem href="/services">{navBar.services}</NavItem>
             <NavItem href="/contact">{navBar.contact}</NavItem>
-            <NavItem
-              href="https://www.instagram.com/begoniabaschy/"
-              rel="noreferrer"
-              target="_blank"
-            >
-              {/* credit to https://fontawesome.com/v5.15/icons/instagram?style=brands */}
-              <i className="fab fa-instagram">
-                <InstagramIcon />
-              </i>
-            </NavItem>
           </>
         )}
 
@@ -111,7 +88,7 @@ const Header = ({ copy }) => {
             <NavItem href="/" left>
               {navBar.mobileHome}
             </NavItem>
-          {isTabletOrMobile && <DropdownMenu />}
+            {isTabletOrMobile && <DropdownMenu />}
           </>
         )}
       </NavUl>
