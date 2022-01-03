@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 import Image from 'next/image';
 import BackgroundImage from '../public/pics/5thAveB.jpg';
+import { useIsTabletOrMobile } from '../hooks';
+import Footer from '../components/Footer';
 
 const X = 4;
 function Garden() {
@@ -15,21 +17,43 @@ function Garden() {
   );
 }
 
-const UnderConstruction = styled.div`
+const Y = 4;
+function GardenMobile() {
+  return (
+    <Image
+      src={BackgroundImage} //pass in image
+      alt="A white house with a white fence and a new lovely new garden landscaping in the front, with a path down the middle"
+      width={4032 / Y}
+      height={3024 / Y}
+    />
+  );
+}
+
+const Container = styled.div`
   position: absolute;
-  top: 6rem; //Header Height // how do i want the header and footer? if i dont want the top to be so close the edge of the page then i either have to do the same to the bottom or have them be different sizes...
+  top: 6rem;
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* margin-top: 4em; */
+
+  @media (max-width: 1438px) {
+    border: 10px #ffffff solid;
+  }
 `;
 
-function HomePage() {
+function HomePage({ copy }) {
+  const isTabletOrMobile = useIsTabletOrMobile();
   return (
-    <UnderConstruction>
-      <Garden />
-    </UnderConstruction>
+    <Container>
+      {!isTabletOrMobile && <Garden />}
+      {isTabletOrMobile && (
+        <>
+          <GardenMobile />
+          <Footer copy={copy} />
+        </>
+      )}
+    </Container>
   );
 }
 
