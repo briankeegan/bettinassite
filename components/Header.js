@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { useRouter } from 'next/router';
 import DropdownMenu from './DropdownMenu';
 import { useIsTabletOrMobile } from '../hooks';
+import Image from 'next/image';
 
 const StyledLink = styled.a`
   text-decoration: none;
@@ -12,6 +13,19 @@ const StyledLink = styled.a`
     props.isActive
       ? props.theme.colors.oliveDrab72
       : props.theme.colors.nickel};
+
+  @media (max-width: 1438px) {
+    border: 2px blue solid;
+    display: flex;
+    align-items: center;
+    /* margin-right: 7rem; force it to the left, would rather not tho*/
+    padding: 0;
+  }
+`;
+
+const MenuStyled = styled.li`
+  border: 2px green solid;
+  padding: 0;
 `;
 
 const NavUl = styled.ul`
@@ -24,6 +38,13 @@ const NavUl = styled.ul`
   background-color: #ffffff;
   margin-left: 3rem;
   margin-right: 3rem;
+
+  @media (max-width: 1438px) {
+    border: 2px red solid;
+    padding: 0;
+    margin: 0;
+    /* why is red border padding sinking below foto? */
+  }
 `;
 
 const NavLi = styled.li`
@@ -35,10 +56,17 @@ const NavLi = styled.li`
   ${(props) => props.left && 'margin-right: auto;'};
 `;
 
-const MobileHome = styled.li`
-  margin: auto 0;
-  padding: 0;
-`;
+const X = 5;
+function InstagramIcon() {
+  return (
+    <Image
+      src="/pics/instagram-brands.svg"
+      alt="instagram icon"
+      width={200 / X}
+      height={200 / X}
+    />
+  );
+}
 
 const NavItem = ({ href, children, left }) => {
   const router = useRouter();
@@ -70,17 +98,28 @@ const Header = ({ copy }) => {
             <NavItem href="/portfolio">{navBar.portfolio}</NavItem>
             <NavItem href="/services">{navBar.services}</NavItem>
             <NavItem href="/contact">{navBar.contact}</NavItem>
+            <NavItem
+              href="https://www.instagram.com/begoniabaschy/"
+              rel="noreferrer"
+              target="_blank"
+            >
+              {/* credit to https://fontawesome.com/v5.15/icons/instagram?style=brands */}
+              <i className="fab fa-instagram">
+                <InstagramIcon />
+              </i>
+            </NavItem>
           </>
         )}
-        <MobileHome>
-          {isTabletOrMobile && (
+
+        {/* Mobile */}
+        {isTabletOrMobile && (
+          <>
             <NavItem href="/" left>
               {navBar.mobileHome}
             </NavItem>
-          )}
-        </MobileHome>
-
-        {isTabletOrMobile && <DropdownMenu />}
+            <MenuStyled>{isTabletOrMobile && <DropdownMenu />}</MenuStyled>
+          </>
+        )}
       </NavUl>
     </header>
   );
