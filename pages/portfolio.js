@@ -23,8 +23,7 @@ const PortfolioImages = ({ src, alt }) => {
 };
 
 const ImageContainer = styled.div`
-  margin-top: 3em;
-  margin-bottom: 5em;
+  margin-bottom: 1rem;
 `;
 
 const Portfolio = () => {

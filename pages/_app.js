@@ -25,7 +25,10 @@ const GlobalStyle = createGlobalStyle`
   }
   h1 {
     font-size: 3rem;
-      margin: 10px;
+    margin: 10px;
+    @media (max-width: 1438px) {
+      font-size: 2rem;
+    }
   }
   p {
     font-size: 1.2rem;

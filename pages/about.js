@@ -37,8 +37,6 @@ const HeaderContainer = styled.h1`
   text-align: center;
 `;
 
-const Blurb = styled.p``;
-
 const About = () => {
   return (
     <Container>
