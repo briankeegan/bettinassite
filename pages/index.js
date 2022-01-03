@@ -38,8 +38,6 @@ const Container = styled.div`
   align-items: center;
 `;
 
-const StyledMobileImage = styled.div``;
-
 const StyledFooterContainer = styled.div`
   margin: auto;
   display: flex;
@@ -69,9 +67,9 @@ function HomePage({ copy }) {
       {!isTabletOrMobile && <Garden />}
       {isTabletOrMobile && (
         <>
-          <StyledMobileImage>
+          <div>
             <GardenMobile />
-          </StyledMobileImage>
+          </div>
           <StyledFooterContainer>
             <Footer copy={copy} />
           </StyledFooterContainer>

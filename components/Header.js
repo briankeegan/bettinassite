@@ -15,17 +15,13 @@ const StyledLink = styled.a`
       : props.theme.colors.nickel};
 
   @media (max-width: 1438px) {
-    border: 2px blue solid;
     display: flex;
     align-items: center;
-    /* margin-right: 7rem; force it to the left, would rather not tho*/
     padding: 1rem;
   }
 `;
 
-const MenuStyled = styled.li`
-  border: 2px green solid;
-`;
+
 
 const NavUl = styled.ul`
   display: flex;
@@ -39,11 +35,9 @@ const NavUl = styled.ul`
   margin-right: 3rem;
 
   @media (max-width: 1438px) {
-    border: 2px red solid;
     padding: 0;
     margin: 0;
     bottom: 0;
-    /* why is red border padding sinking below foto? */
   }
 `;
 
@@ -117,7 +111,7 @@ const Header = ({ copy }) => {
             <NavItem href="/" left>
               {navBar.mobileHome}
             </NavItem>
-            <MenuStyled>{isTabletOrMobile && <DropdownMenu />}</MenuStyled>
+          {isTabletOrMobile && <DropdownMenu />}
           </>
         )}
       </NavUl>
