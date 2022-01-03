@@ -12,7 +12,6 @@ function Garden() {
       alt="A white house with a white fence and a new lovely new garden landscaping in the front, with a path down the middle"
       width={6032 / X}
       height={3024 / X}
-      // 4032 × 3024 OG
     />
   );
 }
@@ -21,7 +20,7 @@ const Y = 4;
 function GardenMobile() {
   return (
     <Image
-      src={BackgroundImage} //pass in image
+      src={BackgroundImage} 
       alt="A white house with a white fence and a new lovely new garden landscaping in the front, with a path down the middle"
       width={4032 / Y}
       height={3024 / Y}
