@@ -21,17 +21,26 @@ const StyledH2 = styled.h2`
   display: block;
 `;
 
+const ServicesImage = ({ src, alt }) => {
+  const X = 3;
+  return <Image src={src} alt={alt} width={2035 / X} height={1570 / X} />;
+};
+const Gap = styled.div`
+  width: 100%;
+  height 1rem;
+`;
+
 const ImageContainer = styled.div`
   padding: 0.5rem;
   width: 100%;
   display: flex;
   justify-content: space-around;
+  @media (max-width: 1438px) {
+    display: flex;
+    flex-direction: column;
+    width: inherit;
+  }
 `;
-
-const ServicesImage = ({ src, alt }) => {
-  const X = 3;
-  return <Image src={src} alt={alt} width={2035 / X} height={1570 / X} />;
-};
 
 function Services() {
   const isTabletOrMobile = useIsTabletOrMobile();
@@ -43,6 +52,7 @@ function Services() {
           src={BeforeTullis}
           alt="An image of a persons garden before it's redone. It's on a small hill with two rows of stone"
         />
+        {isTabletOrMobile && <Gap />}
         <ServicesImage
           src={AfterTullis}
           alt="An image of a persons garden before it's redone. It's on a small hill with two rows of stone separating the hill where the plants will go."
@@ -55,6 +65,7 @@ function Services() {
           src={BeforeCentral}
           alt="An image of a persons garden before it's redone. It's on a small hill with two rows of stone"
         />
+        {isTabletOrMobile && <Gap />}
         <ServicesImage
           src={AfterCentral}
           alt="An image of a persons garden before it's redone. It's on a small hill with two rows of stone separating the hill where the plants will go."
@@ -67,6 +78,7 @@ function Services() {
           src={_5thAveMaintenance}
           alt="An image of a persons garden before it's redone. It's on a small hill with two rows of stone"
         />
+        {isTabletOrMobile && <Gap />}
         <ServicesImage
           src={_5thAveMaintenance_2}
           alt="An image of a persons garden before it's redone. It's on a small hill with two rows of stone separating the hill where the plants will go."
