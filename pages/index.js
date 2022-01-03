@@ -36,9 +36,29 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+`;
 
-  @media (max-width: 1438px) {
-    border: 10px #ffffff solid;
+const StyledMobileImage = styled.div``;
+
+const StyledFooterContainer = styled.div`
+  margin: auto;
+  display: flex;
+  align-items: center;
+  margin-top: 6.5rem;
+  @media (max-height: 800px) {
+    margin-top: 5.5rem;
+  }
+  @media (max-height: 750px) {
+    margin-top: 4rem;
+  }
+  @media (max-height: 667px) {
+    margin-top: 3rem;
+  }
+  @media (max-height: 640px) {
+    margin-top: 2rem;
+  }
+  @media (max-height: 600px) {
+    margin-top: 0;
   }
 `;
 
@@ -49,8 +69,12 @@ function HomePage({ copy }) {
       {!isTabletOrMobile && <Garden />}
       {isTabletOrMobile && (
         <>
-          <GardenMobile />
-          <Footer copy={copy} />
+          <StyledMobileImage>
+            <GardenMobile />
+          </StyledMobileImage>
+          <StyledFooterContainer>
+            <Footer copy={copy} />
+          </StyledFooterContainer>
         </>
       )}
     </Container>

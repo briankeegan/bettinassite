@@ -19,13 +19,12 @@ const StyledLink = styled.a`
     display: flex;
     align-items: center;
     /* margin-right: 7rem; force it to the left, would rather not tho*/
-    padding: 0;
+    padding: 1rem;
   }
 `;
 
 const MenuStyled = styled.li`
   border: 2px green solid;
-  padding: 0;
 `;
 
 const NavUl = styled.ul`
@@ -43,6 +42,7 @@ const NavUl = styled.ul`
     border: 2px red solid;
     padding: 0;
     margin: 0;
+    bottom: 0;
     /* why is red border padding sinking below foto? */
   }
 `;

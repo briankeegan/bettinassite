@@ -10,6 +10,8 @@ const Button = styled.button`
   display: flex;
   align-items: center;
   z-index: 100;
+  padding: 1rem;
+  border: 2px orange solid;
 `;
 
 const CloseContainer = styled.div`
