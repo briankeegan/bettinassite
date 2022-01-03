@@ -33,7 +33,6 @@ services:
 #
 navBar:
   home: Begonia Baschy Landscaping
-  mobileHome: BBL
   about: About
   portfolio: Portfolio
   services: Services

@@ -20,6 +20,12 @@ const StyledLink = styled.a`
   }
 `;
 
+const MobileHome = styled.div`
+  display: flex;
+  flex-direction: column;
+  font-size: 1rem;
+`;
+
 const NavUl = styled.ul`
   display: flex;
   flex-direction: row;
@@ -64,6 +70,7 @@ const NavItem = ({ href, children, left }) => {
 const Header = ({ copy }) => {
   const isTabletOrMobile = useIsTabletOrMobile();
   const { navBar = {} } = copy;
+  const homeDivided = (navBar.home || '').split(' ');
   return (
     <header>
       <NavUl>
@@ -86,7 +93,11 @@ const Header = ({ copy }) => {
         {isTabletOrMobile && (
           <>
             <NavItem href="/" left>
-              {navBar.mobileHome}
+              <MobileHome>
+                {homeDivided.map((word) => (
+                  <div key={word}>{word}</div>
+                ))}
+              </MobileHome>
             </NavItem>
             {isTabletOrMobile && <DropdownMenu />}
           </>
