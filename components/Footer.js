@@ -1,4 +1,6 @@
 import styled from 'styled-components';
+import { FaInstagram } from 'react-icons/fa';
+import { useIsTabletOrMobile } from '../hooks';
 
 const Container = styled.div`
   display: flex;
@@ -48,14 +50,33 @@ const FooterLi = styled.li`
   }
 `;
 
+const StyledGram = styled.a`
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+`;
+
+const InstagramButton = () => (
+  <StyledGram
+    href="https://www.instagram.com/begoniabaschy/"
+    rel="noreferrer"
+    target="_blank"
+  >
+    <FaInstagram css={{ fontSize: '2rem' }} />
+  </StyledGram>
+);
+
 const Footer = ({ copy }) => {
   const { footer = [] } = copy;
+  const isTabletOrMobile = useIsTabletOrMobile();
   return (
     <Container>
       <FooterUl>
+        {!isTabletOrMobile && <InstagramButton />}
         {footer.map((item) => {
           return <FooterLi key={item}>{item}</FooterLi>;
         })}
+        {isTabletOrMobile && <InstagramButton />}
       </FooterUl>
     </Container>
   );
