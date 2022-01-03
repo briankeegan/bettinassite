@@ -9,3 +9,5 @@ Last todos!
 - padding x menu reduce to same as hamburger
 
 - add instagram icon back to where it was and change to react/fontawesome icon
+
+- any extra yaml stuff for betttina
