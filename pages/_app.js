@@ -1,43 +1,34 @@
 import { useRouter } from 'next/router';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import NoMobile from '../components/NoMobile';
-import styled, { createGlobalStyle, ThemeProvider } from 'styled-components';
-import { useYaml, useHubSpotForm } from '../hooks';
+import { createGlobalStyle, ThemeProvider } from 'styled-components';
+import { useYaml, useHubSpotForm, useIsTabletOrMobile } from '../hooks';
 import './_app.css';
-
-const MIN_SIZE = '1438px';
-
-const StyledVisibility = styled.div`
-  @media (max-width: ${MIN_SIZE}) {
-    display: none;
-  }
-`;
-const StyledHidden = styled.div`
-  @media (min-width: ${MIN_SIZE}) {
-    display: none;
-  }
-`;
 
 // font-family: 'Commissioner', sans-serif;
 const GlobalStyle = createGlobalStyle`
+  html {
+    font-size: 16px;
+  }
   * {
       box-sizing: border-box;
       font-family: 'Proza Libre', sans-serif;
       color: ${(props) => props.theme.colors.oliveDrab7};
-      font-size: 16px; 
   }
   body {
     margin: 0;
     padding: 0;
     background: #fff;
     background: cover;
-    /* background: no-repeat; */
     height: 100vh;
+    width: 100%;
   }
   h1 {
     font-size: 3rem;
-      margin: 10px;
+    margin: 10px;
+    @media (max-width: 1438px) {
+      font-size: 2rem;
+    }
   }
   p {
     font-size: 1.2rem;
@@ -47,16 +38,47 @@ const GlobalStyle = createGlobalStyle`
   }
   .hbspt-form {
     display: ${(props) => {
-      return props.showForm ? 'block' : 'none';
+      return props.showForm ? 'flex' : 'none';
     }};
-    width: 30rem;
+    width: 100%;
+    max-width: 30rem;
     margin: 0 auto;
-    @media (max-width: ${MIN_SIZE}) {
-      visibility: hidden;
-    }
+    padding: 2rem;
   }
   .submitted-message {
     font-size: 1.5rem;
+  }
+  /* Button reset credit https://css-tricks.com/overriding-default-button-styles/ */
+  button {
+    display: inline-block;
+    border: none;
+    padding: 1rem 2rem;
+    margin: 0;
+    text-decoration: none;
+    background: transparent;
+    color: #ffffff;
+    font-family: sans-serif;
+    font-size: 1rem;
+    cursor: pointer;
+    text-align: center;
+    transition: background 250ms ease-in-out, 
+                transform 150ms ease;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+  }
+
+  button:hover,
+  button:focus {
+      background: transparent;
+  }
+
+  button:focus {
+      outline: 1px solid #fff;
+      outline-offset: -4px;
+  }
+
+  button:active {
+      transform: scale(0.99);
   }
 `;
 
@@ -82,19 +104,15 @@ export default function App({ Component, pageProps }) {
   const router = useRouter();
   const copy = useYaml();
   useHubSpotForm();
+  const isTabletOrMobile = useIsTabletOrMobile();
   return (
     <>
-      <StyledHidden>
-        <NoMobile copy={copy} />
-      </StyledHidden>
-      <StyledVisibility>
-        <GlobalStyle theme={theme} showForm={router.asPath === '/contact'} />
-        <ThemeProvider theme={theme}>
-          <Header copy={copy} />
-          <Component copy={copy} {...pageProps} />
-          <Footer copy={copy} />
-        </ThemeProvider>
-      </StyledVisibility>
+      <GlobalStyle theme={theme} showForm={router.asPath === '/contact'} />
+      <ThemeProvider theme={theme}>
+        <Header copy={copy} />
+        <Component copy={copy} {...pageProps} />
+        {!isTabletOrMobile && <Footer copy={copy} />}
+      </ThemeProvider>
     </>
   );
 }
