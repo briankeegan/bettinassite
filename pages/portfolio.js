@@ -5,6 +5,7 @@ import _5thAveB from '../public/pics/5thAveB.jpg';
 import _5thAveC from '../public/pics/5thAveC.jpg';
 import _5thAveD from '../public/pics/5thAveD.jpg';
 import _5thAveE from '../public/pics/5thAveIMG_8708.jpg';
+import { useIsTabletOrMobile } from '../hooks';
 
 // TODO: Most of these components are the same as services.  Maybe we can make them shared?
 const Container = styled.div`
@@ -38,9 +39,10 @@ const PortfolioImages = ({ src, alt }) => {
 };
 
 const Portfolio = () => {
+  const isTabletOrMobile = useIsTabletOrMobile();
   return (
     <Container>
-      <StyledH2>Gallery</StyledH2>
+      {isTabletOrMobile && <StyledH2>Gallery</StyledH2>}
       <PortfolioImages
         src={Central}
         alt="A beautiful landscape by Bettina Baschy landscapes"
