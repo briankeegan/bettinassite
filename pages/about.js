@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import Image from 'next/image';
+import { useIsTabletOrMobile } from '../hooks';
 
 const AboutTitle = `Bettina Chanel`;
 
@@ -13,12 +14,17 @@ I offer garden designs that focus on enhancing the environment for my clients as
 When I’m not in my client’s gardens, I’m usually in mine with my toddler. When I’m home, you can find me knitting, sewing or remodeling my home and watching my favorite reality TV shows 90 Day Fiance or The Bachelor.`;
 
 const Container = styled.div`
+  position: absolute;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding: 1rem;
-  margin: 1rem;
+  @media (max-width: 1438px) {
+    /* position: absolute; */
+    flex-direction: column;
+    padding: 1rem;
+    margin: 1rem;
+  }
 `;
 
 const X = 3;
@@ -33,16 +39,49 @@ function Family() {
   );
 }
 
+const ImageContainer = styled.div`
+  padding-left: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+`;
+
+const TextContainer = styled.div`
+  display: block;
+  padding: 0;
+  margin: 5rem;
+`;
 const HeaderContainer = styled.h1`
-  text-align: center;
+  margin: 0;
+  @media (max-width: 1438px) {
+    text-align: center;
+    margin-bottom: 0.5rem;
+  }
 `;
 
 const About = () => {
+  const isTabletOrMobile = useIsTabletOrMobile();
   return (
     <Container>
-      <HeaderContainer>{AboutTitle}</HeaderContainer>
-      <Family />
-      <p>{AboutBlurb}</p>
+      {!isTabletOrMobile && (
+        <>
+          <ImageContainer>
+            <Family />
+          </ImageContainer>
+          <TextContainer>
+            <HeaderContainer>{AboutTitle}</HeaderContainer>
+            <p>{AboutBlurb}</p>
+          </TextContainer>
+        </>
+      )}
+      {isTabletOrMobile && (
+        <>
+          <HeaderContainer>{AboutTitle}</HeaderContainer>
+          <Family />
+          <p>{AboutBlurb}</p>
+        </>
+      )}
     </Container>
   );
 };
