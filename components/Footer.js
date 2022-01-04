@@ -1,5 +1,6 @@
 import styled from 'styled-components';
-import Image from 'next/image';
+import { FaInstagram } from 'react-icons/fa';
+import { useIsTabletOrMobile } from '../hooks';
 
 const Container = styled.div`
   display: flex;
@@ -12,9 +13,10 @@ const Container = styled.div`
   bottom: 0;
   width: 100%;
   background-color: #ffffff;
-  /* background: linear-gradient(white 0%, white 15%, #a1bfcd 100%); */
-  /* background-image: linear-gradient(
-135deg,#99b6c6 14%,#bcd8e5 78%); */
+  @media (max-width: 1438px) {
+    position: relative;
+    margin-top: 2rem;
+  }
 `;
 
 const FooterUl = styled.ul`
@@ -37,47 +39,44 @@ const FooterLi = styled.li`
   padding-left: 1rem;
   padding-right: 1rem;
   color: ${(props) => props?.theme?.colors?.oliveDrab72};
+
+  @media (max-width: 1438px) {
+    margin: 0.5rem;
+    font-size: 1.2rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+  }
 `;
 
-const FooterLink = styled.a`
+const StyledGram = styled.a`
   display: flex;
   align-items: center;
-  padding: 0;
+  padding: 1rem;
 `;
 
-const X = 5;
-function InstagramIcon() {
-  return (
-    <Image
-      src="/pics/instagram-brands.svg"
-      alt="instagram icon"
-      width={200 / X}
-      height={200 / X}
-    />
-  );
-}
+const InstagramButton = () => (
+  <StyledGram
+    href="https://www.instagram.com/begoniabaschy/"
+    rel="noreferrer"
+    target="_blank"
+  >
+    <FaInstagram css={{ fontSize: '2rem' }} />
+  </StyledGram>
+);
 
 const Footer = ({ copy }) => {
   const { footer = [] } = copy;
+  const isTabletOrMobile = useIsTabletOrMobile();
   return (
     <Container>
       <FooterUl>
-        <FooterLi>
-          <FooterLink
-            href="https://www.instagram.com/begoniabaschy/"
-            rel="noreferrer"
-            target="_blank"
-          >
-            {/* credit to https://fontawesome.com/v5.15/icons/instagram?style=brands */}
-            <i className="fab fa-instagram">
-              <InstagramIcon />
-            </i>
-          </FooterLink>
-        </FooterLi>
+        {!isTabletOrMobile && <InstagramButton />}
         {footer.map((item) => {
           return <FooterLi key={item}>{item}</FooterLi>;
         })}
-        {/* make a do between each item -- what does this mean?*/}
+        {isTabletOrMobile && <InstagramButton />}
       </FooterUl>
     </Container>
   );
