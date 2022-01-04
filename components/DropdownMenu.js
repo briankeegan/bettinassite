@@ -94,7 +94,7 @@ const MenuLi = styled.li`
   font-size: 1.875rem;
 `;
 
-function DropDownMenu() {
+const DropDownMenu = () => {
   const [isActive, setIsActive] = useState(false);
   const handleClick = () => setIsActive(!isActive); //update or "set" aka (setIsActive)... click event from false to true (isActive)
   return (
@@ -127,6 +127,8 @@ function DropDownMenu() {
       </Menu>
     </>
   );
-}
+};
+
+LinkWithOnClick.displayName = 'LinkWithOnClick';
 
 export default DropDownMenu;
