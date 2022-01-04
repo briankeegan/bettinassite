@@ -96,34 +96,34 @@ const MenuLi = styled.li`
 
 const DropDownMenu = () => {
   const [isActive, setIsActive] = useState(false);
-  const handleClick = () => setIsActive(!isActive); //update or "set" aka (setIsActive)... click event from false to true (isActive)
+  const toggleIsActive = () => setIsActive(!isActive); //update or "set" aka (setIsActive)... click event from false to true (isActive)
   return (
     <>
-      <OpenButton onClick={handleClick} hidden={isActive} />
+      <OpenButton onClick={toggleIsActive} hidden={isActive} />
       <Menu hidden={!isActive}>
         <MenuUl>
           <MenuLi>
-            <LinkWithOnClick onClick={handleClick} href="/about">
+            <LinkWithOnClick onClick={toggleIsActive} href="/about">
               About
             </LinkWithOnClick>
           </MenuLi>
           <MenuLi>
-            <LinkWithOnClick onClick={handleClick} href="/portfolio">
+            <LinkWithOnClick onClick={toggleIsActive} href="/portfolio">
               Portfolio
             </LinkWithOnClick>
           </MenuLi>
           <MenuLi>
-            <LinkWithOnClick onClick={handleClick} href="/services">
+            <LinkWithOnClick onClick={toggleIsActive} href="/services">
               Services
             </LinkWithOnClick>
           </MenuLi>
           <MenuLi>
-            <LinkWithOnClick onClick={handleClick} href="/contact">
+            <LinkWithOnClick onClick={toggleIsActive} href="/contact">
               Contact
             </LinkWithOnClick>
           </MenuLi>
         </MenuUl>
-        <CloseButton onClick={handleClick} />
+        <CloseButton onClick={toggleIsActive} />
       </Menu>
     </>
   );
