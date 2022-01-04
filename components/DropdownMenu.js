@@ -91,7 +91,7 @@ const MenuLi = styled.li`
   justify-content: center;
   align-items: center;
   text-decoration: none;
-  font-size: 30px;
+  font-size: 1.875rem;
 `;
 
 function DropDownMenu() {
