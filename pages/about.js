@@ -39,7 +39,7 @@ const ImageContainer = styled.div`
 
 const TextContainer = styled.div`
   box-shadow: -0em 0 0.4em #f3f3f1, -0em 0 0.4em #f3f3f1;
-  background: linear-gradient(to left top, #fff, #f5fae3 30%, #fff);
+  background: linear-gradient(to left top, #fff, #e7ede4 40%, #fff);
   margin: 7.5rem;
   margin-right: 5.5rem;
   margin-left: 20px;
