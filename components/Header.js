@@ -100,7 +100,9 @@ const Header = ({ copy }) => {
         {/* Mobile */}
         {isTabletOrMobile && (
           <>
-            <Logo />
+            <NavItem href="/" left>
+              <Logo />
+            </NavItem>
             <DropdownMenu />
           </>
         )}
