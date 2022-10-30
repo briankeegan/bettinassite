@@ -42,6 +42,14 @@ const ImageContainer = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  @media (max-width: 1438px) {
+    padding: 0 160px 0;
+    margin: 10px;
+  }
+  @media (max-width: 935px) {
+    padding: 0;
+    margin: 2px;
+  }
 `;
 
 const TextContainer = styled.div`
@@ -50,9 +58,14 @@ const TextContainer = styled.div`
   margin: 0px;
   line-height: 1.7;
   @media (max-width: 1438px) {
-    /* text-align: center; */
+    padding: 0 160px 0;
+    margin: 10px;
     line-height: 1.4;
-    padding: 0;
+ 
+  }
+  @media (max-width: 935px) {
+    padding: 0px;
+    margin: 2px;
   }
 `;
 const HeaderContainer = styled.h1`
@@ -81,7 +94,10 @@ const About = () => {
       {isTabletOrMobile && (
         <>
           <HeaderContainer>{AboutTitle}</HeaderContainer>
-          <Family />
+          <ImageContainer>
+            <Family />
+          </ImageContainer>
+
           <TextContainer>
             <p>{AboutBlurb}</p>
           </TextContainer>
