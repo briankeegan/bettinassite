@@ -1,8 +1,24 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import styled from 'styled-components';
 import { useRouter } from 'next/router';
 import DropdownMenu from './DropdownMenu';
 import { useIsTabletOrMobile } from '../hooks';
+import LogoImage from '../public/pics/bettina_logo.png';
+
+const Logo = () => {
+  return (
+    <Image
+      src={LogoImage}
+      alt="A garden of blue and pink hydrangeas"
+      width={162}
+      height={94}
+      placeholder="blur"
+      layout="intrinsic"
+      objectFit="cover"
+    />
+  );
+};
 
 const StyledLink = styled.a`
   text-decoration: none;
@@ -20,12 +36,6 @@ const StyledLink = styled.a`
   }
 `;
 
-const MobileHome = styled.div`
-  display: flex;
-  flex-direction: column;
-  font-size: 1rem;
-`;
-
 const NavUl = styled.ul`
   display: flex;
   flex-direction: row;
@@ -34,8 +44,6 @@ const NavUl = styled.ul`
   margin: 0;
   padding: 0;
   background-color: #ffffff;
-  margin-left: 3rem;
-  margin-right: 3rem;
 
   @media (max-width: 1438px) {
     padding: 0;
@@ -43,6 +51,7 @@ const NavUl = styled.ul`
     bottom: 0;
     margin-left: 1rem;
     margin-right: 1rem;
+    justify-content: space-between;
   }
 `;
 
@@ -70,13 +79,12 @@ const NavItem = ({ href, children, left }) => {
 const Header = ({ copy }) => {
   const isTabletOrMobile = useIsTabletOrMobile();
   const { navBar = {} } = copy;
-  const homeDivided = (navBar.home || '').split(' ');
   return (
     <header>
       <NavUl>
         {!isTabletOrMobile && (
           <NavItem href="/" left>
-            {navBar.home}
+            <Logo />
           </NavItem>
         )}
 
@@ -92,14 +100,8 @@ const Header = ({ copy }) => {
         {/* Mobile */}
         {isTabletOrMobile && (
           <>
-            <NavItem href="/" left>
-              <MobileHome>
-                {homeDivided.map((word) => (
-                  <div key={word}>{word}</div>
-                ))}
-              </MobileHome>
-            </NavItem>
-            {isTabletOrMobile && <DropdownMenu />}
+            <Logo />
+            <DropdownMenu />
           </>
         )}
       </NavUl>
