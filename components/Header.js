@@ -49,8 +49,6 @@ const NavUl = styled.ul`
     padding: 0;
     margin: 0;
     bottom: 0;
-    margin-left: 1rem;
-    margin-right: 1rem;
     justify-content: space-between;
   }
 `;
