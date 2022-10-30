@@ -8,9 +8,9 @@ function Garden() {
   return (
     <Image
       src={BackgroundImage}
-      alt="A white house with a white fence and a new lovely new garden landscaping in the front, with a path down the middle"
+      alt="A garden of blue and pink hydrangeas"
       width={4032}
-      height={3024}
+      height={1904}
       placeholder="blur"
       layout="intrinsic"
       objectFit="cover"
@@ -19,14 +19,14 @@ function Garden() {
   );
 }
 
-const Y = 4;
 function GardenMobile() {
   return (
     <Image
       src={BackgroundImage}
-      alt="A white house with a white fence and a new lovely new garden landscaping in the front, with a path down the middle"
-      width={4032 / Y}
-      height={3024 / Y}
+      alt="A garden of blue and pink hydrangeas"
+      width={4032}
+      height={3024}
+      placeholder="blur"
     />
   );
 }
