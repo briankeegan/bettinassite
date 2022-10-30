@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import Image from 'next/image';
 import BackgroundImage from '../public/pics/NEW homepage photo.jpg';
+import GardenBanner from '../public/pics/please use.jpg';
 import { useIsTabletOrMobile } from '../hooks';
 import Footer from '../components/Footer';
 
@@ -26,6 +27,17 @@ function GardenMobile() {
       alt="A garden of blue and pink hydrangeas"
       width={4032}
       height={3024}
+      placeholder="blur"
+    />
+  );
+}
+function BannerImage() {
+  return (
+    <Image
+      src={GardenBanner}
+      alt="A garden of blue and pink hydrangeas"
+      width={4032}
+      height={1283}
       placeholder="blur"
     />
   );
@@ -70,6 +82,7 @@ function HomePage({ copy }) {
       {isTabletOrMobile && (
         <>
           <div>
+            <BannerImage />
             <GardenMobile />
           </div>
           <StyledFooterContainer>
