@@ -15,7 +15,7 @@ const Container = styled.div`
   background-color: #ffffff;
   @media (max-width: 1438px) {
     position: relative;
-    margin-top: 2rem;
+    margin-top: 1rem;
   }
 `;
 
