@@ -1,17 +1,12 @@
 import styled from 'styled-components';
 import Image from 'next/image';
 import { useIsTabletOrMobile } from '../hooks';
+import AboutImage from '/public/pics/bettina_new_about_foto.jpeg';
 
 const AboutTitle = `Bettina Chanel`;
 
 const AboutBlurb = `
-Hello! I’m Bettina.
-
-I’m a graduate of the Evergreen State College, where my focus was on native plants, organic farming and printmaking. Since graduating in 2013, I’ve kept my hands in the soil and followed the lead of the many wonderful mentors I’ve been lucky enough to know along the way. I’ve had the privilege to work on beautiful estates and gardens from Seattle to Olympia and between. In 2019, through the encouragement of coworkers and clients, I started my own landscaping business.\n
-
-I offer garden designs that focus on enhancing the environment for my clients as well as pollinators and other wildlife. My goal as a designer is to bring the client's personality into a garden. Whether that’s an entire rainbow of phlox and echinacea or a monochromatic moon garden. I look forward to meeting each new challenge and seeing a project through. While my specialty is plant design, I’m happy to work with other local contractors to create the space you want to spend more time in.\n
-
-When I’m not in my client’s gardens, I’m usually in mine with my toddler. When I’m home, you can find me knitting, sewing or remodeling my home and watching my favorite reality TV shows 90 Day Fiance or The Bachelor.`;
+Hello! I’m Bettina, a garden designer in Olympia, Washington. I've been working in the horticulture industry for more than a decade. I’ve had the privilege to work in beautiful estates, nurseries and gardens from Seattle to Olympia and between. I offer garden designs that focus on enhancing the environment for my clients as well as pollinators and other wildlife. I have a particular interest in native plant design and the naturalistic movement. My goal as a designer is to bring the client's personality into a garden. Whether that’s an entire rainbow of phlox and echinacea or a monochromatic moon garden. I look forward to meeting each new challenge and seeing a project through in a timely manner. I also take pride in educating my clients on best practices for organic, environmentally minded gardening. While my specialty is plant design, I’m happy to work with other local contractors to create the space you want to spend more time in.`;
 
 const Container = styled.div`
   position: absolute;
@@ -27,20 +22,22 @@ const Container = styled.div`
   }
 `;
 
-const X = 3;
-function Family() {
+const Family = () => {
   return (
     <Image
-      src="/pics/bettina_new_about_foto.jpeg"
+      src={AboutImage}
       alt="the landscape artist standing next to a very large green plant"
-      width={15500 / X}
-      height={19000 / X}
+      width={5024}
+      height={6032}
+      placeholder="blur"
+      layout="intrinsic"
+      objectFit="cover"
     />
   );
-}
+};
 
 const ImageContainer = styled.div`
-  padding-left: 2rem;
+  padding: 25px 40px 10px 42px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -49,8 +46,14 @@ const ImageContainer = styled.div`
 
 const TextContainer = styled.div`
   display: block;
-  padding: 0;
-  margin: 5rem;
+  padding-right: 40px;
+  margin: 0px;
+  line-height: 1.7;
+  @media (max-width: 1438px) {
+    /* text-align: center; */
+    line-height: 1.4;
+    padding: 0;
+  }
 `;
 const HeaderContainer = styled.h1`
   margin: 0;
@@ -79,7 +82,9 @@ const About = () => {
         <>
           <HeaderContainer>{AboutTitle}</HeaderContainer>
           <Family />
-          <p>{AboutBlurb}</p>
+          <TextContainer>
+            <p>{AboutBlurb}</p>
+          </TextContainer>
         </>
       )}
     </Container>
