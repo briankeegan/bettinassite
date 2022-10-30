@@ -20,6 +20,20 @@ const Logo = () => {
   );
 };
 
+const LogoMobile = () => {
+  return (
+    <Image
+      src={LogoImage}
+      alt="A garden of blue and pink hydrangeas"
+      width={142}
+      height={84}
+      placeholder="blur"
+      layout="intrinsic"
+      objectFit="cover"
+    />
+  );
+};
+
 const StyledLink = styled.a`
   text-decoration: none;
   padding: 2.5rem;
@@ -99,7 +113,7 @@ const Header = ({ copy }) => {
         {isTabletOrMobile && (
           <>
             <NavItem href="/" left>
-              <Logo />
+              <LogoMobile />
             </NavItem>
             <DropdownMenu />
           </>
