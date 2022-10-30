@@ -15,7 +15,8 @@ const Container = styled.div`
   background-color: #ffffff;
   @media (max-width: 1438px) {
     position: relative;
-    margin-top: 2rem;
+    margin-top: 10px;
+    margin-bottom: 10px;
   }
 `;
 
@@ -36,13 +37,11 @@ const FooterLi = styled.li`
   flex-direction: row;
   align-items: center;
   font-size: 1.5rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
   color: ${(props) => props?.theme?.colors?.oliveDrab72};
 
   @media (max-width: 1438px) {
-    margin: 0.5rem;
-    font-size: 1.2rem;
+    margin: 1rem;
+    font-size: 1.4rem;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -53,12 +52,15 @@ const FooterLi = styled.li`
 const StyledGram = styled.a`
   display: flex;
   align-items: center;
-  padding: 1rem;
+  @media (max-width: 1438px) {
+    padding: 10px;
+    margin-bottom: 10px;
+  }
 `;
 
 const InstagramButton = () => (
   <StyledGram
-    href="https://www.instagram.com/begoniabaschy/"
+    href="https://www.instagram.com/begonia_bettina/"
     rel="noreferrer"
     target="_blank"
   >
