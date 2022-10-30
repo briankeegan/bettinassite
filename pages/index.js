@@ -1,10 +1,11 @@
 import styled from 'styled-components';
 import Image from 'next/image';
 import BackgroundImage from '../public/pics/NEW homepage photo.jpg';
+import BackgroundImageMobile from '../public/pics/NEW homepage photo_cropped.jpg';
 import { useIsTabletOrMobile } from '../hooks';
 import Footer from '../components/Footer';
 
-function Garden() {
+const Garden = () => {
   return (
     <Image
       src={BackgroundImage}
@@ -17,19 +18,22 @@ function Garden() {
       priority
     />
   );
-}
+};
 
-function GardenMobile() {
+const WIDTH = 2427;
+const HEIGHT = 3224;
+
+const GardenMobile = () => {
   return (
     <Image
-      src={BackgroundImage}
+      src={BackgroundImageMobile}
       alt="A garden of blue and pink hydrangeas"
-      width={4032}
-      height={3024}
+      width={WIDTH}
+      height={HEIGHT}
       placeholder="blur"
     />
   );
-}
+};
 
 const Container = styled.div`
   position: absolute;
@@ -44,25 +48,10 @@ const StyledFooterContainer = styled.div`
   margin: auto;
   display: flex;
   align-items: center;
-  margin-top: 6.5rem;
-  @media (max-height: 800px) {
-    margin-top: 5.5rem;
-  }
-  @media (max-height: 750px) {
-    margin-top: 4rem;
-  }
-  @media (max-height: 667px) {
-    margin-top: 3rem;
-  }
-  @media (max-height: 640px) {
-    margin-top: 2rem;
-  }
-  @media (max-height: 600px) {
-    margin-top: 0;
-  }
+  line-height: 1;
 `;
 
-function HomePage({ copy }) {
+const HomePage = ({ copy }) => {
   const isTabletOrMobile = useIsTabletOrMobile();
   return (
     <Container>
@@ -79,6 +68,6 @@ function HomePage({ copy }) {
       )}
     </Container>
   );
-}
+};
 
 export default HomePage;
