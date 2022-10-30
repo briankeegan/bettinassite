@@ -28,7 +28,7 @@ const CloseButton = ({ onClick }) => (
 const OpenContainer = styled.div`
   z-index: ${(props) => (props.hidden ? -1 : 1)};
   opacity: ${(props) => (props.hidden ? 0 : 1)};
-  transition: all 500ms ease 350ms;
+  transition: all 500ms ease 300ms;
   font-size: 2rem;
 `;
 const OpenButton = ({ onClick, hidden }) => (
@@ -71,7 +71,7 @@ const Menu = styled.nav`
   height: 100%;
   z-index: ${(props) => (props.hidden ? -1 : 100)};
   opacity: ${(props) => (props.hidden ? 0 : 1)};
-  transition: all 500ms ease 350ms;
+  transition: all 500ms ease 300ms;
 `;
 
 const MenuUl = styled.ul`
